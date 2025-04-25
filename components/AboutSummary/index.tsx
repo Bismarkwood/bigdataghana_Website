@@ -131,7 +131,7 @@ const AboutSummary = () => {
               </motion.p>
               <br />
 
-              <motion.p
+              <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ ...bounceTransition, delay: 0.5 }}
@@ -162,7 +162,7 @@ const AboutSummary = () => {
                   </span>
                   Cost Optimization
                 </li>
-              </motion.p>
+              </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}

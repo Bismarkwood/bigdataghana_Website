@@ -122,7 +122,7 @@ const menuData: Menu[] = [
 
   {
     id: 4,
-    title: "Lands & Properties",
+    title: "Team",
     newTab: false,
     path: "/properties",
   },

@@ -22,7 +22,7 @@ const Testimonial = () => {
               headerInfo={{
                 title: `TESTIMONIALS`,
                 subtitle: `Client’s Testimonials`,
-                description: `Don’t just take our word for it, hear from those who’ve found their dream properties with us.`,
+                description: `Don’t just take our word for it, hear from those who’ve worked with us.`,
               }}
             />
           </div>
