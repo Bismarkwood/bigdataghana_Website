@@ -111,20 +111,32 @@ const menuData: Menu[] = [
     id: 2,
     title: "About",
     newTab: false,
-    path: "/about",
-  },
-  {
-    id: 3,
-    title: "Services",
-    newTab: false,
-    path: "/services",
-  },
-
-  {
-    id: 4,
-    title: "Team",
-    newTab: false,
-    path: "/properties",
+    submenu: [
+      {
+        id: 21,
+        title: "Who We Are",
+        newTab: false,
+        path: "/about",
+      },
+      {
+        id: 22,
+        title: "Projects",
+        newTab: false,
+        path: "/about",
+      },
+      {
+        id: 23,
+        title: "Services",
+        newTab: false,
+        path: "/about",
+      },
+      {
+        id: 24,
+        title: "Team",
+        newTab: false,
+        path: "/about",
+      },
+    ],
   },
 
   {
@@ -139,6 +151,12 @@ const menuData: Menu[] = [
     title: "Contact Us",
     newTab: false,
     path: "/contact",
+  },
+  {
+    id: 4,
+    title: "FAQ",
+    newTab: false,
+    path: "/properties",
   },
 ];
 
