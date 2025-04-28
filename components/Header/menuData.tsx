@@ -126,13 +126,33 @@ const menuData: Menu[] = [
       },
       {
         id: 23,
-        title: "Services",
+        title: "Team",
+        newTab: false,
+        path: "/about",
+      },
+    ],
+  },
+
+  {
+    id: 3,
+    title: "Services",
+    newTab: false,
+    submenu: [
+      {
+        id: 31,
+        title: "Geospatial",
         newTab: false,
         path: "/about",
       },
       {
-        id: 24,
-        title: "Team",
+        id: 32,
+        title: "Cloud Computing",
+        newTab: false,
+        path: "/about",
+      },
+      {
+        id: 33,
+        title: "Data Analytics and AI",
         newTab: false,
         path: "/about",
       },

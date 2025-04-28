@@ -14,6 +14,7 @@ import Blog from "@/components/Blog";
 import Testimonial from "@/components/Testimonial";
 import Banner from "@/components/Banner";
 import AboutSummary from "@/components/AboutSummary";
+import WhatWeOffer from "@/components/WhatWeOffer";
 export const metadata: Metadata = {
   title: "Big Data Ghana",
 
@@ -26,6 +27,7 @@ export default function Home() {
     <main>
       <Hero />
       <AboutSummary />
+      <WhatWeOffer />
       <Banner />
       {/* <FeaturesTab /> */}
 

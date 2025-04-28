@@ -209,7 +209,7 @@ const Footer = () => {
                     <li>
                       <a
                         href="/"
-                        className="hover:ttext-red-600 mb-3 inline-block text-gray-400"
+                        className="hover:ttext-red-600 mb-3 inline-block text-gray-400 hover:text-red-600"
                       >
                         About Company
                       </a>

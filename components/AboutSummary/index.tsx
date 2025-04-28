@@ -117,11 +117,11 @@ const AboutSummary = () => {
                 viewport={{ once: false }}
                 className="text-justify text-sm"
               >
-                BigData Ghana Limited is a technology company that exists to
-                meet all your data and information needs. With the many years of
-                experience in the data landscape in Ghana and Africa, we have
-                what it takes to assist you get the right data for your work.{" "}
-                <br />
+                At BigData Ghana Limited, we empower businesses and
+                organizations across Africa with cutting-edge data solutions
+                tailored to drive growth, efficiency, and innovation. With years
+                of expertise in the data landscape, we understand the unique
+                challenges and opportunities in Ghana and beyond. <br />
                 <br />
                 We specialize in deploying geolocation data solutions using
                 modern AI technologies. We deliver insights on cross-platform
@@ -130,52 +130,91 @@ const AboutSummary = () => {
                 reliable, cloud infrastructure. <br />
               </motion.p>
               <br />
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.4 }}
+                viewport={{ once: false }}
+                className="text-justify text-sm"
+              >
+                <p>
+                  We’ve helped businesses, governments, and NGOs make
+                  data-driven decisions with:
+                </p>
+
+                <div className="mt-2 flex items-center gap-5">
+                  <motion.div
+                    className="flex h-11 w-11 items-center justify-center rounded-[50%] border border-red-600 dark:border-strokedark dark:bg-blacksection"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ delay: 0.5, type: "spring" }}
+                    viewport={{ once: false }}
+                  >
+                    <p className="text-metatitle font-semibold text-red-600 dark:text-white">
+                      01
+                    </p>
+                  </motion.div>
+                  <div className="w-3/4">
+                    <p className="text-justify">
+                      Precision-mapped geolocation analytics for logistics,
+                      retail, and urban planning.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-2 flex items-center gap-5">
+                  <motion.div
+                    className="flex h-11 w-11 items-center justify-center rounded-[50%] border border-red-600 dark:border-strokedark dark:bg-blacksection"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ delay: 0.5, type: "spring" }}
+                    viewport={{ once: false }}
+                  >
+                    <p className="text-metatitle font-semibold text-red-600 dark:text-white">
+                      02
+                    </p>
+                  </motion.div>
+                  <div className="w-3/4">
+                    <p className="text-justify">
+                      AI-enhanced data processing to uncover trends, risks, and
+                      opportunities.
+                    </p>
+                  </div>
+                </div>
+                <div className="mt-2 flex items-center gap-5">
+                  <motion.div
+                    className="flex h-11 w-11 items-center justify-center rounded-[50%] border border-red-600 dark:border-strokedark dark:bg-blacksection"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ delay: 0.5, type: "spring" }}
+                    viewport={{ once: false }}
+                  >
+                    <p className="text-metatitle font-semibold text-red-600 dark:text-white">
+                      03
+                    </p>
+                  </motion.div>
+                  <div className="w-3/4">
+                    <p className="text-justify">
+                      Secure cloud adoption with minimal downtime and maximum
+                      ROI.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ ...bounceTransition, delay: 0.5 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className="py-5"
               >
-                <li className="flex items-center gap-2 py-2 text-sm font-medium text-black">
-                  <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-red-600 text-white">
-                    ✓
-                  </span>
-                  Timeliness
-                </li>
-                <li className="flex items-center gap-2 py-2 text-sm font-medium text-black">
-                  <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-red-600 text-white">
-                    ✓
-                  </span>
-                  Integrity
-                </li>
-                <li className="flex items-center gap-2 py-2 text-sm font-medium text-black">
-                  <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-red-600 text-white">
-                    ✓
-                  </span>
-                  Innovation
-                </li>
-                <li className="flex items-center gap-2 py-2 text-sm font-medium text-black">
-                  <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-red-600 text-white">
-                    ✓
-                  </span>
-                  Cost Optimization
-                </li>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ ...bounceTransition, delay: 0.5 }}
-                viewport={{ once: false, amount: 0.3 }}
-              >
-                <div className=" flex flex-wrap gap-5">
+                <div className=" mt-5 flex flex-wrap gap-5">
                   <Link href={"/about"}>
                     <button
                       aria-label="get started button"
-                      className="mr-auto flex rounded-full bg-red-600 px-7.5  py-2.5 font-semibold text-white duration-300 ease-in-out hover:bg-btndark dark:bg-btndark dark:hover:bg-blackho"
+                      className="ml-auto flex rounded-full bg-red-600 px-7.5  py-2.5 font-semibold text-white duration-300 ease-in-out hover:bg-red-800 dark:bg-btndark dark:hover:bg-blackho"
                     >
-                      Explore Now
+                      About Us
                     </button>
                   </Link>
                 </div>

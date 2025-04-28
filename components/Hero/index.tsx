@@ -14,11 +14,11 @@ const Hero = () => {
     {
       background: "/images/logo/dataCenter.jpeg",
       type: "image",
-      title: "Welcome to Your Real Estate One-Stop Shop",
+      title: "Welcome to BigData Ghana.",
       description:
-        "We combine excellence and expertise in making land acquisition litigation-free, property construction and management, seamless and gratifying.",
-      buttonText: "Contact Us",
-      buttonLink: "/contact",
+        "where cutting-edge technology meets transformative solutions. We empower businesses to thrive in the digital era through AI-driven innovation, scalable software, and next-gen IT infrastructure.",
+      buttonText: "Learn More",
+      buttonLink: "/About",
     },
     {
       background: "/images/logo/bg-video.mp4",
@@ -34,9 +34,9 @@ const Hero = () => {
       type: "image",
       title: "Trusted by Thousands",
       description:
-        "Join our growing community of satisfied clients who have found their dream properties through our services.",
-      buttonText: "View Properties",
-      buttonLink: "/properties",
+        "Join our growing network of innovators and industry leaders who trust us to power their digital transformation.",
+      buttonText: "Get In Touch",
+      buttonLink: "/Contact",
     },
   ];
 
@@ -108,7 +108,7 @@ const Hero = () => {
                       loop
                       muted
                       playsInline
-                      className="h-full w-full object-cover"
+                      className="z-0 h-full w-full object-cover"
                     >
                       <source src={slide.background} type="video/mp4" />
                     </video>
@@ -123,7 +123,7 @@ const Hero = () => {
                   )}
 
                   {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/50">
+                  <div className="absolute inset-0  bg-gradient-to-r from-black/80 to-black/50">
                     <div className="absolute inset-0 opacity-10 dark:opacity-5">
                       <Image
                         src="/images/shape/shape-dotted-light.svg"
@@ -140,17 +140,17 @@ const Hero = () => {
                     </div>
                   </div>
 
-                  {/* Slide content - animates with background */}
-                  <div className="mx-auto flex h-full max-w-c-1390 items-center px-10 sm:px-10 md:px-24 xl:px-24 2xl:px-24">
+                  {/* Slide content */}
+                  <div className="z-10 mx-auto flex h-full max-w-c-1390 items-center px-10 sm:px-10 md:px-24 xl:px-24 2xl:px-24">
                     <motion.div
                       className="md:w-2/3"
                       initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
                       transition={{ ...bounceTransition, delay: 0.2 }}
                     >
                       <h1 className="mb-5 pr-16 font-bold text-white">
-                        <span className="text-4xl font-bold md:text-6xl xl:text-6xl">
+                        <span className="text-3xl font-bold md:text-5xl xl:text-5xl">
                           {slide.title.split("\n").map((line, i) => (
                             <span key={i}>
                               {line}
@@ -185,7 +185,7 @@ const Hero = () => {
                           <Link href={slide.buttonLink}>
                             <button
                               aria-label={slide.buttonText}
-                              className="flex rounded-full bg-primary/90 px-7.5 py-2.5 text-white duration-300 ease-in-out hover:bg-orange-500 dark:bg-btndark dark:hover:bg-blackho"
+                              className="flex rounded-full bg-red-600 px-7.5 py-2.5 text-white duration-300 ease-in-out hover:bg-red-800 dark:bg-btndark dark:hover:bg-blackho"
                             >
                               {slide.buttonText}
                             </button>

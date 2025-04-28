@@ -13,16 +13,17 @@ const SingleTestimonial = ({ review }: { review: Testimonial }) => {
             className="float-left rounded-full"
             src={image}
             alt={name}
-          />
-          <h3 className="mb-1.5 text-metatitle3 text-primary dark:text-white">
+          />{" "}
+          <br />
+          <h3 className="mb-1.5 text-metatitle2 text-red-600 dark:text-white">
             {name}
           </h3>
           <p>{designation}</p>
         </div>
-        <span className="text-background text-9xl font-extrabold">,,</span>
+        <span className="text-9xl font-extrabold text-background">,,</span>
       </div>
 
-      <p className="text-justify">{content}</p>
+      <p className="text-justify text-sm">{content}</p>
     </div>
   );
 };
