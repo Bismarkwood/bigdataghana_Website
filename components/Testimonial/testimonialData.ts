@@ -19,7 +19,7 @@ export const testimonialData: Testimonial[] = [
     designation: "Accra, Ghana",
     image: image2,
     content:
-      "BigData Ghana's data analytics training was simply amazing! I learned so much from the Business Intelligence and data analytics sessions. Philip (the instructor) was very patient in explaining each concept and made sure everyone understood before moving on. The best part was that the training was online, and it felt like we were in the same room. I highly recommend this training to anyone who wants to develop their data analytics skills.",
+      "BigData Ghana's data analytics training was simply amazing! I learned so much from the Business Intelligence and data analytics sessions. Philip (the instructor) was very patient in explaining each concept and made sure everyone understood before moving on. The best part was that the training was online, and it felt like we were in the same room.",
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ export const testimonialData: Testimonial[] = [
     designation: "Accra, Ghana",
     image: image3,
     content:
-      "I am extremely grateful for the data analyst training program I participated in. This training has expanded my knowledge and skills and has made me efficient in delivering my duties in the firm. I know it is a huge boost to my career advancement. I would highly recommend this training to anyone who is interested in becoming a data analyst or wants to enhance their existing skills in the field. It is a comprehensive and well-structured program that delivers on its promises",
+      "I am extremely grateful for the data analyst training program I participated in. This training has expanded my knowledge and skills and has made me efficient in delivering my duties in the firm. I know it is a huge boost to my career advancement. I would highly recommend this training to anyone who is interested in becoming a data analyst or wants to enhance their existing skills in the field.",
   },
   // {
   //   id: 4,

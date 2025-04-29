@@ -16,7 +16,7 @@ const Hero = () => {
       type: "image",
       title: "Welcome to BigData Ghana.",
       description:
-        "where cutting-edge technology meets transformative solutions. We empower businesses to thrive in the digital era through AI-driven innovation, scalable software, and next-gen IT infrastructure.",
+        "where cutting-edge technology meets transformative solutions. ",
       buttonText: "Learn More",
       buttonLink: "/About",
     },
@@ -141,7 +141,7 @@ const Hero = () => {
                   </div>
 
                   {/* Slide content */}
-                  <div className="z-10 mx-auto flex h-full max-w-c-1390 items-center px-10 sm:px-10 md:px-24 xl:px-24 2xl:px-24">
+                  <div className="z-10 mx-auto mt-5 flex h-full max-w-c-1390 items-center px-10 sm:px-10 md:px-24 xl:px-24 2xl:px-24">
                     <motion.div
                       className="md:w-2/3"
                       initial={{ opacity: 0, y: 20 }}
@@ -181,7 +181,7 @@ const Hero = () => {
                         exit={{ opacity: 0 }}
                         transition={{ delay: 0.6 }}
                       >
-                        <div className="flex flex-wrap gap-5">
+                        <div className="mb-15 flex flex-wrap gap-5">
                           <Link href={slide.buttonLink}>
                             <button
                               aria-label={slide.buttonText}

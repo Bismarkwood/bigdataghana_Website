@@ -25,7 +25,8 @@ const Header = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleStickyMenu);
-  });
+    return () => window.removeEventListener("scroll", handleStickyMenu);
+  }, []);
 
   return (
     <header
@@ -61,12 +62,12 @@ const Header = () => {
                   ? stickyMenu
                     ? "dark:hidden"
                     : "hidden"
-                  : "ark:hidden"
+                  : "dark:hidden"
               }`}
             />
           </Link>
 
-          {/* <!-- Hamburger Toggle BTN --> */}
+          {/* Hamburger Toggle BTN */}
           <button
             aria-label="hamburger Toggler"
             className="block xl:hidden"
@@ -75,39 +76,48 @@ const Header = () => {
             <span className="relative block h-5.5 w-5.5 cursor-pointer">
               <span className="absolute right-0 block h-full w-full">
                 <span
-                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black delay-[0] duration-200 ease-in-out dark:bg-white ${
+                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm ${
+                    stickyMenu ? "bg-black" : "bg-white"
+                  } delay-[0] duration-200 ease-in-out dark:bg-white ${
                     !navigationOpen ? "!w-full delay-300" : "w-0"
                   }`}
                 ></span>
                 <span
-                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black delay-150 duration-200 ease-in-out dark:bg-white ${
+                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm ${
+                    stickyMenu ? "bg-black" : "bg-white"
+                  } delay-150 duration-200 ease-in-out dark:bg-white ${
                     !navigationOpen ? "delay-400 !w-full" : "w-0"
                   }`}
                 ></span>
                 <span
-                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black delay-200 duration-200 ease-in-out dark:bg-white ${
+                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm ${
+                    stickyMenu ? "bg-black" : "bg-white"
+                  } delay-200 duration-200 ease-in-out dark:bg-white ${
                     !navigationOpen ? "!w-full delay-500" : "w-0"
                   }`}
                 ></span>
               </span>
               <span className="du-block absolute right-0 h-full w-full rotate-45">
                 <span
-                  className={`absolute left-2.5 top-0 block h-full w-0.5 rounded-sm bg-black delay-300 duration-200 ease-in-out dark:bg-white ${
+                  className={`absolute left-2.5 top-0 block h-full w-0.5 rounded-sm ${
+                    stickyMenu ? "bg-black" : "bg-white"
+                  } delay-300 duration-200 ease-in-out dark:bg-white ${
                     !navigationOpen ? "!h-0 delay-[0]" : "h-full"
                   }`}
                 ></span>
                 <span
-                  className={`delay-400 absolute left-0 top-2.5 block h-0.5 w-full rounded-sm bg-black duration-200 ease-in-out dark:bg-white ${
+                  className={`delay-400 absolute left-0 top-2.5 block h-0.5 w-full rounded-sm ${
+                    stickyMenu ? "bg-black" : "bg-white"
+                  } duration-200 ease-in-out dark:bg-white ${
                     !navigationOpen ? "!h-0 delay-200" : "h-0.5"
                   }`}
                 ></span>
               </span>
             </span>
           </button>
-          {/* <!-- Hamburger Toggle BTN --> */}
         </div>
 
-        {/* Nav Menu Start   */}
+        {/* Nav Menu Start */}
         <div
           className={`invisible h-0 w-full items-center justify-between xl:visible xl:flex xl:h-auto xl:w-full ${
             navigationOpen &&
@@ -122,12 +132,16 @@ const Header = () => {
                     <>
                       <button
                         onClick={() => setDropdownToggler(!dropdownToggler)}
-                        className="hover:text-primary90 flex cursor-pointer items-center justify-between gap-3 py-2 text-black dark:text-white"
+                        className={`flex cursor-pointer items-center justify-between gap-3 ${
+                          stickyMenu ? "text-black" : "text-white"
+                        } hover:text-primary dark:text-white`}
                       >
                         {menuItem.title}
                         <span>
                           <svg
-                            className="h-3 w-3 cursor-pointer fill-black group-hover:fill-primary/90 dark:fill-white"
+                            className={`h-3 w-3 cursor-pointer ${
+                              stickyMenu ? "fill-black" : "fill-white"
+                            } group-hover:fill-primary dark:fill-white`}
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 512 512"
                           >
@@ -137,12 +151,15 @@ const Header = () => {
                       </button>
 
                       <ul
-                        className={`dropdown ${
-                          dropdownToggler ? "flex" : ""
-                        } py-2 text-black dark:text-white`}
+                        className={`dropdown ${dropdownToggler ? "flex" : ""} ${
+                          stickyMenu ? "text-black" : "text-white"
+                        } dark:text-white`}
                       >
                         {menuItem.submenu.map((item, key) => (
-                          <li key={key} className="hover:text-primary">
+                          <li
+                            key={key}
+                            className="text-black hover:text-primary"
+                          >
                             <Link href={item.path || "#"}>{item.title}</Link>
                           </li>
                         ))}
@@ -151,18 +168,13 @@ const Header = () => {
                   ) : (
                     <Link
                       href={`${menuItem.path}`}
-                      className={`
-              py-2 
-              ${
-                pathUrl === menuItem.path
-                  ? "font-semibold text-red-600"
-                  : pathUrl === "/"
-                  ? stickyMenu
-                    ? "text-black  hover:text-red-600  dark:text-white"
-                    : "text-black hover:text-red-600  md:text-white "
-                  : "text-black  hover:text-red-600 dark:text-white"
-              }
-            `}
+                      className={`${
+                        pathUrl === menuItem.path
+                          ? "text-primary"
+                          : stickyMenu
+                          ? "text-black hover:text-primary"
+                          : "text-white hover:text-primary"
+                      } dark:text-white dark:hover:text-primary`}
                     >
                       {menuItem.title}
                     </Link>
@@ -174,20 +186,11 @@ const Header = () => {
 
           <div className="mt-7 flex items-center gap-6 xl:mt-0">
             <ThemeToggler />
-
-            {/* <Link
-              href="/contact"
-              className="flex items-center justify-center rounded-full bg-orange-500 px-7.5 py-1.5 text-regular text-white duration-300 ease-in-out hover:bg-primary"
-            >
-              Build With Us
-            </Link> */}
           </div>
         </div>
       </div>
     </header>
   );
 };
-
-// w-full delay-300
 
 export default Header;

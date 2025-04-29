@@ -21,15 +21,6 @@ const Contact = () => {
     <>
       {/* <!-- ===== Contact Start ===== --> */}
       <section id="support" className="px-4 md:px-8 2xl:px-0">
-        {/* <!-- Section Title Start --> */}
-        <SectionHeader
-          headerInfo={{
-            title: "Contact",
-            subtitle: "",
-            description: `We are a one-stop shop real estate solution. We combine excellence and expertise in making land acquisition litigation-free, property construction and management, seamless and gratifying.`,
-          }}
-        />
-        {/* <!-- Section Title End --> */}
         <div className="relative mx-auto mt-10 max-w-c-1390">
           <div className="mb-20 h-[400px] w-full overflow-hidden rounded-xl shadow-lg sm:h-[200px] md:h-[300px] lg:h-[400px]">
             <iframe
