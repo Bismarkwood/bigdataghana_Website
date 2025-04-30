@@ -176,7 +176,7 @@ const menuData: Menu[] = [
     id: 4,
     title: "FAQ",
     newTab: false,
-    path: "/properties",
+    path: "/faq",
   },
 ];
 

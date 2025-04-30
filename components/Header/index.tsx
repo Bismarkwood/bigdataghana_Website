@@ -153,12 +153,12 @@ const Header = () => {
                       <ul
                         className={`dropdown ${dropdownToggler ? "flex" : ""} ${
                           stickyMenu ? "text-black" : "text-white"
-                        } dark:text-white`}
+                        } dark:text-white dark:hover:text-primary`}
                       >
                         {menuItem.submenu.map((item, key) => (
                           <li
                             key={key}
-                            className="text-black hover:text-primary"
+                            className="text-black hover:text-primary dark:text-white dark:hover:text-primary"
                           >
                             <Link href={item.path || "#"}>{item.title}</Link>
                           </li>

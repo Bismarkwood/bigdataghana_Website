@@ -19,7 +19,7 @@ const About = () => {
   ];
   return (
     <>
-      <section className="overflow-hidden bg-gray-200 py-20 lg:py-25 xl:py-30">
+      <section className="overflow-hidden bg-gray-200 py-20 dark:bg-black lg:py-25 xl:py-30">
         <div className="mx-auto max-w-c-1235 px-4 md:px-8 xl:px-0">
           <div className="flex flex-col items-center gap-8 lg:flex-row lg:gap-32.5">
             {/* Image Left */}
@@ -142,7 +142,7 @@ const About = () => {
 
                 <div className="mt-2 flex items-center gap-5">
                   <motion.div
-                    className="flex h-11 w-11 items-center justify-center rounded-[50%] border border-red-600 dark:border-strokedark dark:bg-blacksection"
+                    className="flex h-11 w-11 items-center justify-center rounded-[50%] border border-red-600 dark:border-red-600 dark:bg-blacksection"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     transition={{ delay: 0.5, type: "spring" }}
@@ -162,7 +162,7 @@ const About = () => {
 
                 <div className="mt-2 flex items-center gap-5">
                   <motion.div
-                    className="flex h-11 w-11 items-center justify-center rounded-[50%] border border-red-600 dark:border-strokedark dark:bg-blacksection"
+                    className="flex h-11 w-11 items-center justify-center rounded-[50%] border border-red-600 dark:border-red-600 dark:bg-blacksection"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     transition={{ delay: 0.5, type: "spring" }}
@@ -181,7 +181,7 @@ const About = () => {
                 </div>
                 <div className="mt-2 flex items-center gap-5">
                   <motion.div
-                    className="flex h-11 w-11 items-center justify-center rounded-[50%] border border-red-600 dark:border-strokedark dark:bg-blacksection"
+                    className="flex h-11 w-11 items-center justify-center rounded-[50%] border border-red-600 dark:border-red-600 dark:bg-blacksection"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     transition={{ delay: 0.5, type: "spring" }}
@@ -211,7 +211,7 @@ const About = () => {
         </div>
       </section>
 
-      <section className="bg-background py-20 dark:bg-black lg:py-25 xl:py-30">
+      {/* <section className="bg-background py-20 dark:bg-black lg:py-25 xl:py-30">
         <div className="mx-auto max-w-c-1235 px-4 md:px-8 2xl:px-0">
           <div className="flex flex-col items-center gap-8 lg:flex-row lg:gap-32.5">
             <motion.div
@@ -231,32 +231,38 @@ const About = () => {
               className="animate_right w-full lg:w-1/2"
             >
               <motion.span
-                className="font-medium uppercase text-orange-500 dark:text-white"
+                className="font-medium uppercase text-red-600 dark:text-white"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
                 viewport={{ once: false }}
               >
-                Our Services
+                3 Easy Working Steps
               </motion.span>
-
-              <motion.h2
-                className="relative mb-6 text-3xl font-bold text-btndark dark:text-white xl:text-hero"
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                viewport={{ once: false }}
-              >
-                What We Offer
-              </motion.h2>
 
               <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
                 viewport={{ once: false }}
-                className="mb-8"
+                className="mb-8 flex"
               >
+                <div className="bg-red-600 p-0 text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="m-0 h-10 w-20"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z"
+                    />
+                  </svg>
+                </div>
                 <p className="text-justify text-lg">
                   We offer seamless property solutions—from buying and selling
                   to rentals and investment opportunities. With expert guidance,
@@ -339,7 +345,7 @@ const About = () => {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };

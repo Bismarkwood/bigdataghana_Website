@@ -11,6 +11,7 @@ import OurClients from "@/components/OurClients";
 import OurMission from "@/components/Missions";
 import Banner2 from "@/components/Banner/index_2";
 import Banner from "@/components/Banner/index";
+import FAQ from "@/components/FAQ";
 
 export const metadata: Metadata = {
   title: "BIG DATA GHANA",
@@ -19,22 +20,17 @@ export const metadata: Metadata = {
   description: "",
 };
 
-export default function AboutPage() {
+export default function FaqPage() {
   return (
     <>
       <BreadCrumb
         crumbTitle={{
-          title: "About Us",
+          title: "Our FAQs",
           description: ``,
         }}
       />
-      <About />
-      <OurMission />
-      <Banner2 />
-      <OurClients />
-      <Banner />
-      {/* <Feature /> */}
-      <Testimonial />
+
+      <FAQ />
     </>
   );
 }

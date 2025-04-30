@@ -11,7 +11,7 @@ const FAQItem = ({ faqData }: { faqData: FaqData }) => {
 
   return (
     <>
-      <div className="flex flex-col border-b border-stroke last-of-type:border-none dark:border-strokedark">
+      <div className=" flex flex-col border-b  border-l-4 border-primary last-of-type:border-none dark:border-strokedark">
         <button
           onClick={() => {
             handleFaqToggle(id);
@@ -31,6 +31,7 @@ const FAQItem = ({ faqData }: { faqData: FaqData }) => {
               <path
                 d="M17.1666 0.833374H10.1666H7.83331H0.833313V3.16671H7.83331H10.1666H17.1666V0.833374Z"
                 fill="currentColor"
+                className="text-primary"
               />
             </svg>
           ) : (
@@ -44,12 +45,13 @@ const FAQItem = ({ faqData }: { faqData: FaqData }) => {
               <path
                 d="M7.83331 7.83337V0.833374H10.1666V7.83337H17.1666V10.1667H10.1666V17.1667H7.83331V10.1667H0.833313V7.83337H7.83331Z"
                 fill="currentColor"
+                className="text-primary"
               />
             </svg>
           )}
         </button>
         <p
-          className={`border-t border-stroke px-6 py-5 dark:border-strokedark lg:px-9 lg:py-7.5 ${
+          className={`border-t  border-primary px-6 py-5 dark:border-strokedark lg:px-9 lg:py-7.5 ${
             activeFaq === id ? "block" : "hidden"
           }`}
         >
