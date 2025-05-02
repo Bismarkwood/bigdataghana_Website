@@ -27,7 +27,7 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <div className="min-h-screen bg-slate-100 px-4 py-24 sm:px-8">
+    <div className="min-h-screen bg-slate-100 px-4 py-24 dark:bg-black sm:px-8">
       <div className="mx-auto max-w-5xl">
         {/* Premium Header */}
         <motion.div
@@ -36,10 +36,8 @@ export default function FAQ() {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="mb-20 text-center"
         >
-          <h2 className="mb-4 text-4xl font-light tracking-tight text-gray-900">
-            <span className="font-normal text-gray-900">
-              Frequently Asked Questions
-            </span>
+          <h2 className="mb-4 text-4xl font-light tracking-tight text-gray-900 dark:text-white">
+            <span className="font-normal ">Frequently Asked Questions</span>
           </h2>
           <div className="flex justify-center">
             <motion.div
