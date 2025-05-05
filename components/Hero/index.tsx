@@ -1,79 +1,52 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import Link from "next/link";
+import { CountUp } from "use-count-up";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isHovering, setIsHovering] = useState(false);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Slide data with different backgrounds and content
-  const slides = [
+  // Array of background media (can mix videos and images)
+  const backgrounds = [
     {
-      background: "/images/logo/dataCenter.jpeg",
-      type: "image",
-      title: "Welcome to BigData Ghana.",
-      description:
-        "where cutting-edge technology meets transformative solutions. ",
-      buttonText: "Learn More",
-      buttonLink: "/About",
-    },
-    {
-      background: "/images/logo/bg-video.mp4",
       type: "video",
-      title: "Innovative Property Solutions",
-      description:
-        "Discover cutting-edge approaches to real estate development and management that set us apart from the competition.",
-      buttonText: "Learn More",
-      buttonLink: "/services",
+      src: "/images/hero/earth_loop.mp4",
+      fallback: "/images/hero/amws.jpg", // Fixed path format
     },
     {
-      background: "/images/logo/amws.jpg",
-      type: "image",
-      title: "Trusted by Thousands",
-      description:
-        "Join our growing network of innovators and industry leaders who trust us to power their digital transformation.",
-      buttonText: "Get In Touch",
-      buttonLink: "/Contact",
+      type: "video",
+      src: "/images/hero/server_room.mp4",
+      fallback: "/images/hero/amws.jpg", // Fixed path format
     },
+    {
+      type: "video",
+      src: "/images/hero/cloud_data.mp4",
+      fallback: "/images/hero/amws.jpg", // Fixed path format
+    },
+    // Add more backgrounds as needed
   ];
 
-  // Reset timer when user interacts or hovers
-  const resetTimeout = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-  };
+  const partnerImages = [
+    "/images/hero/earth_loop.mp4",
+    "/images/hero/earth_loop.mp4",
+    "/images/hero/earth_loop.mp4",
+    "/images/hero/earth_loop.mp4",
+  ];
 
-  // Auto slide every 10 seconds when not hovering
+  // Auto-rotate slides
   useEffect(() => {
-    resetTimeout();
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % backgrounds.length);
+    }, 8000); // Change slide every 8 seconds
 
-    if (!isHovering) {
-      timeoutRef.current = setTimeout(() => {
-        setCurrentSlide((prev) => (prev + 1) % slides.length);
-      }, 6000);
-    }
+    return () => clearInterval(interval);
+  }, [backgrounds.length]);
 
-    return () => resetTimeout();
-  }, [currentSlide, isHovering, slides.length]);
-
-  const goToSlide = (index: number) => {
-    resetTimeout();
-    setCurrentSlide(index);
-  };
-
-  const goToNextSlide = () => {
-    resetTimeout();
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-  const goToPrevSlide = () => {
-    resetTimeout();
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
+  const MyProject = () => <CountUp isCounting end={200} duration={3.2} />;
+  const MyClient = () => <CountUp isCounting end={380} duration={3.4} />;
+  const MyLand = () => <CountUp isCounting end={1520} duration={3.6} />;
 
   const bounceTransition = {
     type: "spring",
@@ -82,179 +55,164 @@ const Hero = () => {
   };
 
   return (
-    <section
-      className="relative min-h-screen overflow-hidden"
-      onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => setIsHovering(false)}
-    >
-      {/* Slides container */}
-      <div className="relative h-screen w-full">
-        <AnimatePresence mode="wait">
-          {slides.map(
-            (slide, index) =>
-              currentSlide === index && (
-                <motion.div
-                  key={index}
-                  className="absolute inset-0"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 1 }}
+    <section className="relative min-h-screen overflow-hidden px-10 pb-20 pt-35 md:pt-40 xl:pb-25 xl:pt-46">
+      {/* Background slider */}
+      <div className="absolute inset-0 -z-10">
+        {backgrounds.map((bg, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentSlide
+                ? "opacity-100"
+                : "pointer-events-none opacity-0"
+            }`}
+          >
+            {bg.type === "video" ? (
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="h-full w-full object-cover"
+              >
+                <source src={bg.src} type="video/mp4" />
+                {/* Fallback image if video doesn't load */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${bg.fallback})` }}
+                />
+              </video>
+            ) : (
+              <Image
+                src={bg.src}
+                alt="Background"
+                fill
+                className="object-cover"
+                priority
+              />
+            )}
+
+            {/* Gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black to-black/50">
+              {/* Optional: Add subtle pattern overlay */}
+              <div className="absolute inset-0 opacity-10 dark:opacity-5">
+                <Image
+                  src="/images/shape/shape-dotted-light.svg"
+                  alt="Background pattern"
+                  fill
+                  className="dark:hidden"
+                />
+                <Image
+                  src="/images/shape/shape-dotted-dark.svg"
+                  alt="Background pattern"
+                  fill
+                  className="hidden dark:block"
+                />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Slide indicators */}
+      <div className="absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 space-x-2">
+        {backgrounds.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`h-2 w-8 rounded-full transition-all ${
+              index === currentSlide ? "bg-white" : "bg-white/50"
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
+
+      {/* Rest of your content remains the same */}
+      <div className="mx-auto max-w-c-1390 sm:px-10 md:px-24 xl:px-24 2xl:px-24">
+        <div className="md:w-2/3">
+          <motion.h1
+            className=" pr-16 font-bold text-white "
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ ...bounceTransition, delay: 0.1 }}
+            viewport={{ once: false, amount: 0.2 }}
+          >
+            <span className=" text-4xl font-bold md:text-6xl xl:text-6xl">
+              {" "}
+              Transforming
+              <br />
+              data into strategic, <br />
+              actionable insights.
+            </span>
+          </motion.h1>
+          <br />
+          <motion.p
+            className="text-lg font-medium text-white"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ ...bounceTransition, delay: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
+          >
+            We offer specialized GIS and remote sensing solutions, leveraging
+            modern frameworks and AI technologies. Our expertise includes
+            delivering insights through cross-platform mobile and web
+            applications, as well as seamlessly migrating data of any scale into
+            secure and reliable cloud infrastructure.
+          </motion.p>
+          {/* Button Section */}
+          <motion.div
+            className="mt-10"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ ...bounceTransition, delay: 0.5 }}
+            viewport={{ once: false, amount: 0.3 }}
+          >
+            <div className="flex flex-wrap gap-5">
+              <Link href={"/contact"}>
+                <button
+                  aria-label="get started button"
+                  className="flex rounded-full bg-primary/90 px-7.5 py-2.5 text-white duration-300 ease-in-out hover:bg-orange-500 dark:bg-btndark dark:hover:bg-blackho"
                 >
-                  {/* Background media */}
-                  {slide.type === "video" ? (
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="z-0 h-full w-full object-cover"
-                    >
-                      <source src={slide.background} type="video/mp4" />
-                    </video>
-                  ) : (
-                    <Image
-                      src={slide.background}
-                      alt=""
-                      fill
-                      className="object-cover"
-                      priority
-                    />
-                  )}
-
-                  {/* Gradient overlay */}
-                  <div className="absolute inset-0  bg-gradient-to-r from-black/80 to-black/50">
-                    <div className="absolute inset-0 opacity-10 dark:opacity-5">
-                      <Image
-                        src="/images/shape/shape-dotted-light.svg"
-                        alt="Background pattern"
-                        fill
-                        className="dark:hidden"
-                      />
-                      <Image
-                        src="/images/shape/shape-dotted-dark.svg"
-                        alt="Background pattern"
-                        fill
-                        className="hidden dark:block"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Slide content */}
-                  <div className="z-10 mx-auto mt-5 flex h-full max-w-c-1390 items-center px-10 sm:px-10 md:px-24 xl:px-24 2xl:px-24">
-                    <motion.div
-                      className="md:w-2/3"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ ...bounceTransition, delay: 0.2 }}
-                    >
-                      <h1 className="mb-5 pr-16 font-bold text-white">
-                        <span className="text-3xl font-bold md:text-5xl xl:text-5xl">
-                          {slide.title.split("\n").map((line, i) => (
-                            <span key={i}>
-                              {line}
-                              <br />
-                            </span>
-                          ))}
-                        </span>
-                      </h1>
-                      <br />
-                      <motion.p
-                        className="text-lg font-medium text-white"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ delay: 0.4 }}
-                      >
-                        {slide.description.split("\n").map((line, i) => (
-                          <span key={i}>
-                            {line}
-                            <br />
-                          </span>
-                        ))}
-                      </motion.p>
-                      <motion.div
-                        className="mt-10"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ delay: 0.6 }}
-                      >
-                        <div className="mb-15 flex flex-wrap gap-5">
-                          <Link href={slide.buttonLink}>
-                            <button
-                              aria-label={slide.buttonText}
-                              className="flex rounded-full bg-red-600 px-7.5 py-2.5 text-white duration-300 ease-in-out hover:bg-red-800 dark:bg-btndark dark:hover:bg-blackho"
-                            >
-                              {slide.buttonText}
-                            </button>
-                          </Link>
-                        </div>
-                      </motion.div>
-                    </motion.div>
-                  </div>
-                </motion.div>
-              ),
-          )}
-        </AnimatePresence>
-
-        {/* Navigation arrows */}
-        <button
-          onClick={goToPrevSlide}
-          className="absolute left-5 top-1/2 z-20 -translate-y-1/2 rounded-full bg-black/30 p-3 text-white hover:bg-black/50"
-          aria-label="Previous slide"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-        </button>
-        <button
-          onClick={goToNextSlide}
-          className="absolute right-5 top-1/2 z-20 -translate-y-1/2 rounded-full bg-black/30 p-3 text-white hover:bg-black/50"
-          aria-label="Next slide"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </button>
-
-        {/* Slide indicators */}
-        <div className="absolute bottom-10 left-0 right-0 z-20 flex justify-center gap-2">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`h-2 w-2 rounded-full transition-all duration-300 ${
-                index === currentSlide
-                  ? "w-8 bg-white"
-                  : "bg-white/50 hover:bg-white/70"
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
+                  Get in touch
+                </button>
+              </Link>
+            </div>
+          </motion.div>
+          <div className="mt-10">
+            <p className=" text-lg font-normal text-background/60 ">
+              Our Partners
+            </p>
+            <motion.div
+              className="inline-flex"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ ...bounceTransition, delay: 0.3 }}
+              viewport={{ once: false, amount: 0.3 }}
+            >
+              <Image
+                width={100}
+                height={100}
+                className=""
+                src="/images/hero/aws_partner.png"
+                alt=""
+              />
+              <Image
+                width={100}
+                height={100}
+                className=""
+                src="/images/hero/aws_partner.png"
+                alt=""
+              />
+              <Image
+                width={100}
+                height={100}
+                className=""
+                src="/images/hero/aws_partner.png"
+                alt=""
+              />
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>
