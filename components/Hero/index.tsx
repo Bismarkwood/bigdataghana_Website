@@ -154,11 +154,9 @@ const Hero = () => {
             transition={{ ...bounceTransition, delay: 0.3 }}
             viewport={{ once: false, amount: 0.3 }}
           >
-            We offer specialized GIS and remote sensing solutions, leveraging
-            modern frameworks and AI technologies. Our expertise includes
-            delivering insights through cross-platform mobile and web
-            applications, as well as seamlessly migrating data of any scale into
-            secure and reliable cloud infrastructure.
+            We offer specialized GIS and remote sensing solutions,
+            cross-platform mobile and web applications, leveraging modern
+            frameworks and AI technologies.
           </motion.p>
           {/* Button Section */}
           <motion.div
@@ -179,12 +177,9 @@ const Hero = () => {
               </Link>
             </div>
           </motion.div>
-          <div className="mt-10">
-            <p className=" text-lg font-normal text-background/60 ">
-              Our Partners
-            </p>
+          <div className="mt-20">
             <motion.div
-              className="inline-flex"
+              className="inline-flex gap-8"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ ...bounceTransition, delay: 0.3 }}
@@ -201,14 +196,14 @@ const Hero = () => {
                 width={100}
                 height={100}
                 className=""
-                src="/images/hero/aws_partner.png"
+                src="/images/hero/ai_logo.png"
                 alt=""
               />
               <Image
                 width={100}
                 height={100}
                 className=""
-                src="/images/hero/aws_partner.png"
+                src="/images/hero/gis_logo.svg"
                 alt=""
               />
             </motion.div>
