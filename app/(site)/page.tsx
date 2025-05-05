@@ -29,7 +29,7 @@ export default function Home() {
     <main>
       <Hero />
       <AboutSummary />
-      <ServicesSlider />
+      {/* <ServicesSlider /> */}
       <WhatWeOffer />
       <OurClient />
       <Banner />

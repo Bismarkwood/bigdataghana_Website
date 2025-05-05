@@ -10,7 +10,7 @@ export default function BlogItem({ post }: { post: BlogPost }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="group relative overflow-hidden border border-gray-100 bg-white"
+      className="group relative overflow-hidden border border-gray-100 bg-white dark:bg-black"
     >
       <Link href={`/blog/${post.slug}`} className="block h-full">
         {/* Image with subtle zoom */}
@@ -39,7 +39,7 @@ export default function BlogItem({ post }: { post: BlogPost }) {
           </div>
 
           {/* Title with elegant underline animation */}
-          <h3 className="mb-3 text-xl font-light leading-tight text-gray-900">
+          <h3 className="mb-3 text-xl font-light leading-tight text-gray-900 dark:text-white">
             <span className="bg-gradient-to-r from-current to-current bg-[length:0%_1px] bg-left-bottom bg-no-repeat pb-1 transition-all duration-500 group-hover:bg-[length:100%_1px]">
               {post.title}
             </span>
