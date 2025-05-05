@@ -29,13 +29,9 @@ export default function Home() {
     <main>
       <Hero />
       <AboutSummary />
-      {/* <ServicesSlider /> */}
+      <Banner />
       <WhatWeOffer />
       <OurClient />
-      <Banner />
-
-      {/* <FeaturesTab /> */}
-
       <Testimonial />
     </main>
   );

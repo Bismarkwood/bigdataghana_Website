@@ -61,7 +61,7 @@ const BreadCrumb = ({ crumbTitle }: { crumbTitle: CrumbTitle }) => {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ ...bounceTransition, delay: 0.3 }}
-                className="text-4xl font-bold text-white sm:text-5xl md:text-6xl lg:text-7xl"
+                className="text-2xl font-bold text-white sm:text-3xl md:text-4xl lg:text-5xl"
               >
                 {title}
               </motion.h1>

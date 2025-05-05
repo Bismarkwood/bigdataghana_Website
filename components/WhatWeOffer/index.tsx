@@ -1,69 +1,36 @@
 "use client";
 import SectionHeader from "../Common/SectionHeader";
-
-import { Autoplay, Pagination } from "swiper";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { Swiper, SwiperSlide } from "swiper/react";
-
 import SingleTestimonial from "./SingleTestimonial";
 import { testimonialData } from "./testimonialData";
 
 const WhatWeOffer = () => {
   return (
-    <>
-      <section className="bg-background py-20 dark:bg-black">
-        <div className="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
-          {/* <!-- Section Title Start --> */}
-          <div className="animate_top mx-auto text-center">
-            <SectionHeader
-              headerInfo={{
-                title: `TESTIMONIALS`,
-                subtitle: `What We Offer`,
-                description: `Don’t just take our word for it, hear from those who’ve worked with us.`,
-              }}
-            />
+    <section className="bg-background py-20 dark:bg-black">
+      <div className="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
+        <div className="animate_top mx-auto text-center">
+          <div className="mb-5 text-center">
+            <span className="text-sm font-semibold uppercase tracking-wider text-red-600 dark:text-white">
+              Our Services
+            </span>
+            <h2 className="mt-2 text-4xl font-bold text-gray-900 dark:text-white">
+              What We Offer
+            </h2>
+            <div className="mx-auto mt-4 h-1 w-20 bg-red-600"></div>
           </div>
-          {/* <!-- Section Title End --> */}
+          <p>
+            Discover the comprehensive services we provide to help you succeed.
+          </p>
         </div>
+      </div>
 
-        <div className="animate_top mx-auto mt-15 max-w-c-1235 px-4 md:px-8 xl:mt-20 xl:px-0">
-          {/* <!-- Slider main container --> */}
-          <div className="swiper testimonial-01 ">
-            {/* <!-- Additional required wrapper --> */}
-            <Swiper
-              spaceBetween={50}
-              slidesPerView={3}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              pagination={{
-                clickable: true,
-              }}
-              modules={[Autoplay, Pagination]}
-              breakpoints={{
-                // when window width is >= 640px
-                0: {
-                  slidesPerView: 1,
-                },
-                // when window width is >= 768px
-                768: {
-                  slidesPerView: 4,
-                },
-              }}
-            >
-              {testimonialData.map((review) => (
-                <SwiperSlide key={review?.id}>
-                  <SingleTestimonial review={review} />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
+      <div className="animate_top mx-auto mt-15 max-w-c-1235 px-4 md:px-8 xl:mt-20 xl:px-0">
+        <div className="grid grid-cols-1 gap-7.5 md:grid-cols-2 lg:grid-cols-3">
+          {testimonialData.slice(0, 3).map((review) => (
+            <SingleTestimonial key={review?.id} review={review} />
+          ))}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

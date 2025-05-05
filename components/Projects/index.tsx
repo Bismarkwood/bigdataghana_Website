@@ -10,7 +10,7 @@ const projects = [
     tags: ["2020", "Flutter", "MongoDB"],
     image: "/images/logo/GAIMS2.png",
     links: [{ type: "demo", url: "" }],
-    accentColor: "bg-red-600",
+    accentColor: "bg-red-700",
   },
   {
     title: "SME Digital",
@@ -19,7 +19,7 @@ const projects = [
     tags: ["2020", "Flutter", "MongoDB"],
     image: "/images/logo/SMEDIGITAL.png",
     links: [{ type: "demo", url: "https://smedigitalgh.com/" }],
-    accentColor: "bg-red-500",
+    accentColor: "bg-red-700",
   },
   {
     title: "Electoral Commission App",
@@ -28,6 +28,51 @@ const projects = [
     tags: ["2020", "React", "Nest"],
     image: "/images/logo/ECapp.png",
     links: [{ type: "demo", url: "https://ecdata.bigdataghana.com/" }],
+    accentColor: "bg-red-700",
+  },
+  {
+    title: "Green Ghana Tracker App",
+    description:
+      "By combining social networking, tree monitoring, and educational elements, the app provides a powerful platform for users to contribute, learn, and inspire positive change in Ghana's ecosystem.",
+    tags: ["2021", "React", "Nest"],
+    image: "/images/logo/GreenGhanaTrackerGrid.png",
+    links: [{ type: "demo", url: "#" }],
+    accentColor: "bg-red-700",
+  },
+  {
+    title: "NFMS",
+    description:
+      "A platform developed to provide spatially explicit data, translating low-level spatial data into high-level, easy-to-understand-and-manipulate data for stakeholders.",
+    tags: ["2020", "React", "Nest"],
+    image: "/images/logo/NFMS.png",
+    links: [{ type: "demo", url: "https://nfmsgh.bigdataghana.com" }],
+    accentColor: "bg-red-700",
+  },
+  {
+    title: "VirtualSoft ID",
+    description:
+      "VirtualSoft ID provides an opportunity for businesses to leverage on modern data technology solutions to speed up their processes.",
+    tags: ["2020", "React", "Nest"],
+    image: "/images/logo/virtualsoftid.png",
+    links: [{ type: "demo", url: "https://vsid.bigdataghana.com" }],
+    accentColor: "bg-red-700",
+  },
+  {
+    title: "BigData Ghana Catalog",
+    description:
+      "The BDG catalog is an initiative in line with BigData Ghana Limited's vision to provide a credible data backbone for accelerated development in Africa.",
+    tags: ["2020", "React", "Nest"],
+    image: "/images/logo/BDGCatalog.png",
+    links: [{ type: "demo", url: "https://catalog.bigdataghana.com" }],
+    accentColor: "bg-red-700",
+  },
+  {
+    title: "Visualise My Parliament",
+    description:
+      "The Visualise My Parliament project was conceived out of the need to further strengthen and extend data utilization among Members of parliament, Parliamentary staff, and the general public and other stakeholders.",
+    tags: ["2021", "React", "Nest"],
+    image: "/images/logo/virtualsoftid.png",
+    links: [{ type: "demo", url: "https://parliament.bigdataghana.com/" }],
     accentColor: "bg-red-700",
   },
 ];
@@ -62,17 +107,6 @@ export default function ProjectsCard() {
         </div>
 
         {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          className="mt-20 text-center"
-        >
-          <button className="rounded-lg border-2 border-red-600 px-8 py-3 font-medium text-red-600 transition-colors duration-300 hover:bg-red-600 hover:text-white">
-            View All Projects
-          </button>
-        </motion.div>
       </div>
     </section>
   );

@@ -45,8 +45,8 @@ const Feature = () => {
           {/* <!-- Section Title Start --> */}
           <SectionHeader
             headerInfo={{
-              title: "At RKE",
-              subtitle: "Our Core Values",
+              title: "",
+              subtitle: "Our Mission",
               description: `We are a one-stop shop real estate solution. We combine excellence and expertise in making land acquisition litigation-free, property construction and management, seamless and gratifying.`,
             }}
           />
