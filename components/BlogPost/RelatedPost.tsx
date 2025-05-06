@@ -18,8 +18,8 @@ const RelatedPost = async () => {
               key={key}
             >
               <div className="max-w-45 relative h-18 w-45">
-                {post.mainImage ? (
-                  <Image fill src={post.mainImage} alt="Blog" />
+                {post.imageUrl ? (
+                  <Image fill src={post.imageUrl} alt="Blog" />
                 ) : (
                   "No image"
                 )}

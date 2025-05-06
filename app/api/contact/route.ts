@@ -1,28 +1,28 @@
 // app/api/contact/route.ts
-import { verifyRecaptcha } from "@/lib/recaptcha";
-import { validateFormData } from "@/lib/validation";
+// import { verifyRecaptcha } from "@/lib/recaptcha";
+// import { validateFormData } from "@/lib/validation";
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
 export async function POST(request: Request) {
   const formData = await request.json();
 
-  // Validate reCAPTCHA
-  if (!(await verifyRecaptcha(formData.recaptchaToken))) {
-    return NextResponse.json(
-      { error: "reCAPTCHA verification failed" },
-      { status: 400 },
-    );
-  }
+  // // Validate reCAPTCHA
+  // if (!(await verifyRecaptcha(formData.recaptchaToken))) {
+  //   return NextResponse.json(
+  //     { error: "reCAPTCHA verification failed" },
+  //     { status: 400 },
+  //   );
+  // }
 
-  // Validate form data
-  const { isValid, errors } = validateFormData(formData);
-  if (!isValid) {
-    return NextResponse.json(
-      { error: "Invalid form data", errors },
-      { status: 400 },
-    );
-  }
+  // // Validate form data
+  // const { isValid, errors } = validateFormData(formData);
+  // if (!isValid) {
+  //   return NextResponse.json(
+  //     { error: "Invalid form data", errors },
+  //     { status: 400 },
+  //   );
+  // }
 
   // Configure email transporter
   const transporter = nodemailer.createTransport({

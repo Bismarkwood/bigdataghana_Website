@@ -10,7 +10,7 @@ export interface BlogPost {
   slug: string;
 }
 
-export const blogPosts: BlogPost[] = [
+const blogPosts: BlogPost[] = [
   {
     id: "1",
     title: "Getting Started with Next.js",
@@ -36,3 +36,6 @@ export const blogPosts: BlogPost[] = [
   },
   // Add more blog posts...
 ];
+
+// Default export
+export default blogPosts;
