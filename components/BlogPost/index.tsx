@@ -1,4 +1,4 @@
-import { blogPosts } from "@/components/BlogPost/blogData";
+import blogPosts from "@/components/BlogPost/blogData";
 import BlogItem from "@/components/BlogPost/BlogItem";
 
 export default function BlogIndex() {
