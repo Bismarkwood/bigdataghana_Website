@@ -79,7 +79,7 @@ const projects = [
 
 export default function ProjectsCard() {
   return (
-    <section className="bg-white px-4 py-24 dark:bg-black sm:px-6 lg:px-8">
+    <section className="bg-slate-200 px-4 py-24 dark:bg-black sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
         <motion.div
