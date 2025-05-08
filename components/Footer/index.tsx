@@ -208,36 +208,27 @@ const Footer = () => {
                   <ul>
                     <li>
                       <a
-                        href="/"
+                        href="/about"
                         className="hover:ttext-red-600 mb-3 inline-block text-gray-400 hover:text-red-600"
                       >
-                        About Company
+                        Who We Are
                       </a>
                     </li>
                     <li>
                       <a
-                        href="/about"
+                        href="/team"
                         className="mb-3 inline-block text-gray-400 hover:text-red-600"
                       >
-                        Meet the Team
-                      </a>
-                    </li>
-
-                    <li>
-                      <a
-                        href="/blog"
-                        className="mb-3 inline-block text-gray-400 hover:text-red-600"
-                      >
-                        News & Blog
+                        Our Team
                       </a>
                     </li>
 
                     <li>
                       <a
-                        href="/blog"
+                        href="/projects"
                         className="mb-3 inline-block text-gray-400 hover:text-red-600"
                       >
-                        Contact
+                        Projects
                       </a>
                     </li>
                   </ul>
@@ -268,19 +259,27 @@ const Footer = () => {
                   <ul>
                     <li>
                       <Link
-                        href="/services"
+                        href="/geospatialServices"
                         className="mb-3 inline-block text-gray-400 hover:text-red-600"
                       >
-                        Big Data Catalogue
+                        Geospatial
                       </Link>
-                      <li>
-                        <a
-                          href="/blog"
-                          className="mb-3 inline-block text-gray-400 hover:text-red-600"
-                        >
-                          Our Services
-                        </a>
-                      </li>
+                    </li>
+                    <li>
+                      <Link
+                        href="/cloudServices"
+                        className="mb-3 inline-block text-gray-400 hover:text-red-600"
+                      >
+                        Cloud Computing
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/dataAIServices"
+                        className="mb-3 inline-block text-gray-400 hover:text-red-600"
+                      >
+                        Data Analytics and AI
+                      </Link>
                     </li>
                   </ul>
                 </motion.div>
