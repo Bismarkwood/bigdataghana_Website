@@ -17,7 +17,7 @@ const Banner = () => {
       {/* Container for full-width image */}
       <div className="relative h-auto w-full">
         <Image
-          src="/images/logo/Social media banner.png"
+          src="/images/logo/app_banner.png"
           alt="Ad Banner"
           width={1920} // Set your image's actual width
           height={500} // Set your image's actual height

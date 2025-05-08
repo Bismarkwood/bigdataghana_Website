@@ -160,20 +160,20 @@ const menuData: Menu[] = [
   },
 
   {
-    id: 5,
+    id: 4,
     title: "News",
     newTab: false,
     path: "/blog",
   },
 
   {
-    id: 6,
+    id: 5,
     title: "Contact Us",
     newTab: false,
     path: "/contact",
   },
   {
-    id: 4,
+    id: 6,
     title: "FAQ",
     newTab: false,
     path: "/faq",
