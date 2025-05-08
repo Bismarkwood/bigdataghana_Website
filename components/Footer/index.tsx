@@ -231,14 +231,7 @@ const Footer = () => {
                         News & Blog
                       </a>
                     </li>
-                    <li>
-                      <a
-                        href="/blog"
-                        className="mb-3 inline-block text-gray-400 hover:text-red-600"
-                      >
-                        Our Services
-                      </a>
-                    </li>
+
                     <li>
                       <a
                         href="/blog"
@@ -269,7 +262,7 @@ const Footer = () => {
                   className="animate_top w-full md:w-auto" // Added w-full for mobile
                 >
                   <h4 className="mb-9 text-itemtitle2 font-medium text-white dark:text-white">
-                    Resources
+                    Services
                   </h4>
 
                   <ul>
@@ -280,6 +273,14 @@ const Footer = () => {
                       >
                         Big Data Catalogue
                       </Link>
+                      <li>
+                        <a
+                          href="/blog"
+                          className="mb-3 inline-block text-gray-400 hover:text-red-600"
+                        >
+                          Our Services
+                        </a>
+                      </li>
                     </li>
                   </ul>
                 </motion.div>
@@ -308,7 +309,8 @@ const Footer = () => {
                   <p className="mb-4 w-full text-gray-400 md:w-[90%]">
                     {" "}
                     {/* Adjusted width for mobile */}
-                    No. 3 Blewusi Rd, <br /> Airport Residential, Accra <br />
+                    No. 3 Blewusi Rd, <br /> Airport Residential, Accra Ghana.{" "}
+                    <br />
                     GA-117-2050 <br />
                     <br />
                     info@bigdataghana.com <br /> +233 54 388 4816
