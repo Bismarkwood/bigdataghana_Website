@@ -9,7 +9,7 @@ import menuData from "./menuData";
 
 const Header = () => {
   const [navigationOpen, setNavigationOpen] = useState(false);
-  const [openDropdownId, setOpenDropdownId] = useState<number | null>(null);
+  const [dropdownToggler, setDropdownToggler] = useState(false);
   const [stickyMenu, setStickyMenu] = useState(false);
 
   const pathUrl = usePathname();
@@ -126,33 +126,32 @@ const Header = () => {
         >
           <nav>
             <ul className="flex flex-col gap-5 xl:flex-row xl:items-center xl:gap-10">
-              {menuData.map((menuItem) => (
-                <li
-                  key={menuItem.id}
-                  className={menuItem.submenu && "group relative"}
-                >
+              {menuData.map((menuItem, key) => (
+                <li key={key} className={menuItem.submenu && "group relative"}>
                   {menuItem.submenu ? (
                     <>
                       <button
-                        onClick={() =>
-                          setOpenDropdownId(
-                            openDropdownId === menuItem.id ? null : menuItem.id,
-                          )
-                        }
+                        onClick={() => setDropdownToggler(!dropdownToggler)}
                         className={`flex cursor-pointer items-center justify-between gap-3 ${
-                          navigationOpen
-                            ? "text-black"
+                          pathUrl === menuItem.path ||
+                          menuItem.submenu.some((item) => pathUrl === item.path)
+                            ? "text-primary"
+                            : navigationOpen
+                            ? "text-black hover:text-primary"
                             : stickyMenu
-                            ? "text-black"
-                            : "text-white"
-                        } hover:text-primary dark:text-white`}
+                            ? "text-black hover:text-primary"
+                            : "text-white hover:text-primary"
+                        } dark:text-white dark:hover:text-primary`}
                       >
                         {menuItem.title}
                         <span>
                           <svg
                             className={`h-3 w-3 cursor-pointer ${
-                              navigationOpen
-                                ? "fill-black"
+                              pathUrl === menuItem.path ||
+                              menuItem.submenu.some(
+                                (item) => pathUrl === item.path,
+                              )
+                                ? "fill-primary"
                                 : stickyMenu
                                 ? "fill-black"
                                 : "fill-white"
@@ -166,20 +165,18 @@ const Header = () => {
                       </button>
 
                       <ul
-                        className={`dropdown ${
-                          openDropdownId === menuItem.id ? "flex" : ""
-                        } ${
-                          navigationOpen
-                            ? "text-black"
-                            : stickyMenu
-                            ? "text-black"
-                            : "text-white"
+                        className={`dropdown ${dropdownToggler ? "flex" : ""} ${
+                          stickyMenu ? "text-black" : "text-white"
                         } dark:text-white dark:hover:text-primary`}
                       >
-                        {menuItem.submenu.map((item) => (
+                        {menuItem.submenu.map((item, key) => (
                           <li
-                            key={item.id}
-                            className="text-black hover:text-primary dark:text-white dark:hover:text-primary"
+                            key={key}
+                            className={`${
+                              pathUrl === item.path
+                                ? "text-primary"
+                                : "text-black hover:text-primary"
+                            } dark:text-white dark:hover:text-primary`}
                           >
                             <Link href={item.path || "#"}>{item.title}</Link>
                           </li>
