@@ -7,7 +7,7 @@ import Image from "next/image";
 
 // Mock data (replace with your actual client logos)
 const clients = [
-  { id: 1, logo: "/images/logo/forestry.png", alt: "Company 1" },
+  { id: 1, logo: "/images/brand/forestry.png", alt: "Company 1" },
   { id: 2, logo: "/images/logo/Group 2.png", alt: "Company 2" },
   { id: 3, logo: "/images/logo/Group 5.png", alt: "Company 3" },
   { id: 4, logo: "/images/logo/german.png", alt: "Company 4" },
