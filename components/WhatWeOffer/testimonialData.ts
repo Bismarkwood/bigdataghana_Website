@@ -13,7 +13,7 @@ export const testimonialData: whatWeOffer[] = [
     image: image1,
     header: " Geospatial",
     content:
-      "BigData Ghana offers specialized Geospatial Business Process Outsourcing (BPO) services tailored for clients across Africa, Europe, and America.",
+      "BigData Ghana offers specialized Geospatial Application Development and Geospatial BPO services tailored for clients across Africa, Europe and America.",
   },
   {
     id: 2,

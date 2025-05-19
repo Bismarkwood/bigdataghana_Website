@@ -135,7 +135,7 @@ const Contact = () => {
                 </h3>
               </div>
               <p className="text-gray-600 dark:text-gray-300">
-                No. 3 Blewusi Rd, Airport Residential, Accra Ghana. <br />
+                No. 4 Blewusi Rd, Airport Residential, Accra Ghana. <br />
                 GA-117-2050,
               </p>
             </div>
