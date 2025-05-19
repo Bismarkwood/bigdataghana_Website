@@ -59,7 +59,7 @@ export default function GeospatialServices() {
       icon: <FiDatabase className="h-6 w-6" />,
       title: "Geospatial BPO Services",
       summary:
-        "BigData Ghana offers specialized Geospatial Business Process Outsourcing (BPO) services tailored for clients across Africa, Europe, and America.",
+        "BigData Ghana offers specialized Geospatial Application Development and Geospatial BPO services tailored for clients across Africa, Europe and America.",
       sections: [
         {
           title: "Key Specializations",
