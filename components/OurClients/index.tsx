@@ -7,15 +7,15 @@ import Image from "next/image";
 
 // Mock data (replace with your actual client logos)
 const clients = [
-  { id: 1, logo: "/images/logo/forestry.png", alt: "Company 1" },
-  { id: 2, logo: "/images/logo/Group 2.png", alt: "Company 2" },
-  { id: 3, logo: "/images/logo/Group 5.png", alt: "Company 3" },
-  { id: 4, logo: "/images/logo/german.png", alt: "Company 4" },
-  { id: 5, logo: "/images/logo/ecom.png", alt: "Company 5" },
-  { id: 6, logo: "/images/logo/Group 7.png", alt: "Company 6" },
-  { id: 7, logo: "/images/logo/Pharmacy_council.png", alt: "Company 7" },
-  { id: 8, logo: "/images/logo/acecor_logo.png", alt: "Company 8" },
-  { id: 9, logo: "/images/logo/snv.png", alt: "Company 9" },
+  { id: 1, logo: "/images/brand/fc_logo.png", alt: "Company 1" },
+  { id: 2, logo: "/images/brand/usaid.png", alt: "Company 2" },
+  { id: 3, logo: "/images/brand/africa_centre.png", alt: "Company 3" },
+  { id: 4, logo: "/images/brand/german_cooperation.png", alt: "Company 4" },
+  { id: 5, logo: "/images/brand/ecom.png", alt: "Company 5" },
+  { id: 6, logo: "/images/brand/uglogo.png", alt: "Company 6" },
+  { id: 7, logo: "/images/brand/pharmacy_council.png", alt: "Company 7" },
+  { id: 8, logo: "/images/brand/africa_centre.png", alt: "Company 8" },
+  // { id: 9, logo: "/images/brand/snv.png", alt: "Company 9" },
 ];
 
 export default function OurClients() {
