@@ -308,7 +308,7 @@ const Footer = () => {
                   <p className="mb-4 w-full text-gray-400 md:w-[90%]">
                     {" "}
                     {/* Adjusted width for mobile */}
-                    No. 3 Blewusi Rd, <br /> Airport Residential, Accra Ghana.{" "}
+                    No. 4 Blewusi Rd, <br /> Airport Residential, Accra Ghana.{" "}
                     <br />
                     GA-117-2050 <br />
                     <br />

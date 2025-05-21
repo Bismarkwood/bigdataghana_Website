@@ -106,7 +106,7 @@ const About = () => {
                 transition={{ delay: 0.5 }}
                 viewport={{ once: false }}
               >
-                We provide location based IT solutions
+                We provide Geospatial IT solutions
               </motion.h2>
               <motion.p
                 initial={{ opacity: 0 }}
