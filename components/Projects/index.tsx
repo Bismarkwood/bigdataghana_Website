@@ -31,6 +31,15 @@ const projects = [
     links: [{ type: "demo", url: "#" }],
     accentColor: "bg-red-700",
   },
+  {
+    title: "VirtualSoft ID",
+    description:
+      "VirtualSoft ID provides an opportunity for businesses to leverage on modern data technology solutions to speed up their processes.",
+    tags: ["2020", "React", "Nest"],
+    image: "/images/logo/virtualsoftid.png",
+    links: [{ type: "demo", url: "https://vsid.bigdataghana.com" }],
+    accentColor: "bg-red-700",
+  },
 
   {
     title: "BigData Ghana Catalog",
@@ -62,15 +71,7 @@ const clientProjects = [
     links: [{ type: "demo", url: "#" }],
     accentColor: "bg-red-700",
   },
-  {
-    title: "VirtualSoft ID",
-    description:
-      "VirtualSoft ID provides an opportunity for businesses to leverage on modern data technology solutions to speed up their processes.",
-    tags: ["2020", "React", "Nest"],
-    image: "/images/logo/virtualsoftid.png",
-    links: [{ type: "demo", url: "https://vsid.bigdataghana.com" }],
-    accentColor: "bg-red-700",
-  },
+
   {
     title: "NFMS",
     description:
