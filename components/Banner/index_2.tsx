@@ -54,14 +54,14 @@ const Banner2 = () => {
             href="/contact"
             className="rounded-lg bg-blue-600 px-8 py-3 font-medium text-white shadow-lg transition duration-300 hover:bg-blue-700 hover:shadow-blue-500/30"
           >
-            Get Started
+            Call Us Now
           </Link>
-          <Link
+          {/* <Link
             href="/about"
             className="rounded-lg border border-gray-600 px-8 py-3 font-medium text-white transition duration-300 hover:border-blue-400 hover:text-blue-400"
           >
             Our Services
-          </Link>
+          </Link> */}
         </div>
       </div>
     </section>

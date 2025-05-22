@@ -4,10 +4,10 @@ import { Metadata } from "next";
 import BreadCrumb from "@/components/BreadCrumb";
 
 export const metadata: Metadata = {
-  title: "Support Page - Solid SaaS Boilerplate",
+  title: "Contact Us - Big Data Ghana",
 
   // other metadata
-  description: "This is Support page for Solid Pro",
+  description: "",
 };
 
 const ContactPage = () => {

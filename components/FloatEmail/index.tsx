@@ -5,7 +5,7 @@ export default function FloatEmail() {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState("");
 
-  const email = "info@royalkingdomestate.com";
+  const email = "info@bigdataghana.com";
 
   const sendEmail = () => {
     window.open(`mailto:${email}?body=${encodeURIComponent(message)}`, "_self");
@@ -78,7 +78,7 @@ export default function FloatEmail() {
       ) : (
         <button
           onClick={() => setIsOpen(true)}
-          className="flex h-10 w-10 items-center justify-center bg-orange-500 shadow-lg transition-all hover:bg-orange-700"
+          className="flex h-10 w-10 items-center justify-center bg-primary shadow-lg transition-all hover:bg-red-700"
           aria-label="Open contact widget"
         >
           <svg

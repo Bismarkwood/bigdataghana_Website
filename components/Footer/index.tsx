@@ -64,7 +64,7 @@ const Footer = () => {
                   <ul className="flex items-center gap-5">
                     <li>
                       <Link
-                        href="https://www.facebook.com/Royalkingdomestate"
+                        href="https://web.facebook.com/bigdataghana"
                         aria-label="Facebook"
                         target="blank"
                       >
@@ -92,7 +92,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <Link
-                        href="https://x.com/RoyalKingdomEst"
+                        href="https://x.com/bigdataghana?s=21"
                         aria-label="Twitter"
                         target="blank"
                       >
@@ -117,7 +117,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <a
-                        href="https://www.linkedin.com/company/royalkingdomestate/"
+                        href="https://www.linkedin.com/posts/bigdata-ghana-limited_bdg-data-announcements-activity-7330141888345255936-scux?utm_source=share&utm_medium=member_ios&rcm=ACoAADx9Nd0BVd7FVYloktQQFTYHI4uOt-3-udE"
                         aria-label="linkedIn"
                         target="blank"
                       >
@@ -145,7 +145,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <a
-                        href="https://www.instagram.com/royalkingdomestate/?hl=en"
+                        href="https://www.instagram.com/bigdataghana?igsh=aG5wZmE5djY0Nmly"
                         aria-label="Instagram"
                         target="blank"
                       >
@@ -163,7 +163,7 @@ const Footer = () => {
 
                     <li>
                       <a
-                        href="https://www.youtube.com/@RoyalKingdomEstate"
+                        href="https://www.youtube.com/@bigdataghanalimited1114"
                         aria-label="Youtube"
                         target="blank"
                       >

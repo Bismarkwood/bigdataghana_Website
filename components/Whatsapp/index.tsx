@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function WhatsAppWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState("");
-  const phoneNumber = "+233557555909";
+  const phoneNumber = "+233543884816";
 
   const sendMessage = () => {
     window.open(

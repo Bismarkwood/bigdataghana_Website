@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const faqs = [
   {
@@ -77,22 +78,25 @@ export default function FAQ() {
           <p className="mb-6 tracking-wider text-gray-500">
             READY TO ELEVATE YOUR BUSINESS?
           </p>
-          <motion.button
-            whileHover={{
-              backgroundColor: "#b91c1c",
-              transition: { duration: 0.3 },
-            }}
-            whileTap={{ scale: 0.98 }}
-            className="relative overflow-hidden bg-primary px-12 py-4 font-medium tracking-wider text-white"
-          >
-            <span className="relative z-10">Schedule Consultation</span>
-            <motion.span
-              className="absolute inset-0 z-0 bg-primary"
-              initial={{ x: "-100%" }}
-              whileHover={{ x: 0 }}
-              transition={{ duration: 0.4 }}
-            />
-          </motion.button>
+
+          <Link href="/contact">
+            <motion.button
+              whileHover={{
+                backgroundColor: "#b91c1c",
+                transition: { duration: 0.3 },
+              }}
+              whileTap={{ scale: 0.98 }}
+              className="relative overflow-hidden bg-primary px-12 py-4 font-medium tracking-wider text-white"
+            >
+              <span className="relative z-10">Talk To Us</span>
+              <motion.span
+                className="absolute inset-0 z-0 bg-primary"
+                initial={{ x: "-100%" }}
+                whileHover={{ x: 0 }}
+                transition={{ duration: 0.4 }}
+              />
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
     </div>

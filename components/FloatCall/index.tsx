@@ -8,7 +8,7 @@ export default function FloatCall() {
   const [message, setMessage] = useState("");
 
   // Contact information
-  const phoneNumber = "+233557555909";
+  const phoneNumber = "+233543884816";
 
   const initiateCall = () => {
     window.open(`tel:${phoneNumber}`, "_self");

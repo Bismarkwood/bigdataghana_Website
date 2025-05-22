@@ -38,9 +38,10 @@ export default function RootLayout({
           <Header />
           <ToasterContext />
           {children}
-          {/* <FloatCall />
+          <FloatCall />
+
+          <FloatEmail />
           <WhatsAppWidget />
-          <FloatEmail /> */}
           <ScrollToTop />
           <Footer />
         </ThemeProvider>

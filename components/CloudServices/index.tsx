@@ -2,6 +2,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { FiServer, FiGlobe, FiCode, FiChevronRight } from "react-icons/fi";
 import { useState } from "react";
+import AWS from "../Banner/aws";
 
 export default function CloudServices() {
   const [activeTab, setActiveTab] = useState(0);
@@ -104,7 +105,7 @@ export default function CloudServices() {
   ];
 
   return (
-    <section className="bg-white px-4 py-20 dark:bg-gray-900">
+    <section className="bg-white py-20 dark:bg-gray-900">
       <div className="mx-auto max-w-7xl">
         {/* Elegant Header */}
         <motion.div
@@ -126,8 +127,10 @@ export default function CloudServices() {
           </p>
         </motion.div>
 
+        <AWS />
+
         {/* Sophisticated Tab Layout */}
-        <div className="flex flex-col gap-8 lg:flex-row">
+        <div className="mx-4 mt-20 flex flex-col gap-8 lg:flex-row">
           {/* Vertical Tabs */}
           <motion.div
             className="flex-none lg:w-1/3"

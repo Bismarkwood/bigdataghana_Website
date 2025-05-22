@@ -194,6 +194,85 @@ export default function GeospatialServices() {
           </p>
         </motion.div>
 
+        {/* Video + Features section */}
+        <div className="my-15 grid gap-16 lg:grid-cols-2 lg:gap-24">
+          {/* Video with subtle border animation */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: false }}
+            className="relative pt-5"
+          >
+            <div className="absolute inset-0 -z-10 rounded-xl bg-gradient-to-br from-gray-100 to-white opacity-60 dark:from-gray-800 dark:to-gray-900"></div>
+            <div className="overflow-hidden rounded-xl shadow-xl">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="h-full w-full object-cover"
+                poster="/images/logo/priscilla-poster.jpg"
+              >
+                <source src="/images/hero/earth_loop.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </motion.div>
+
+          {/* Features with animated bars */}
+          <div className="flex flex-col justify-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: false }}
+            >
+              <h3 className="mb-8 text-3xl font-light text-gray-900 dark:text-white">
+                <span className="font-medium">Our Services</span>
+              </h3>
+
+              <div className="space-y-8">
+                {[
+                  {
+                    title: "GIS and Remote Sensing",
+                    description:
+                      "Focuses on building the foundation of spatial systems to enable organizations to adopt GIS and Remote Sensing technologies",
+                  },
+                  {
+                    title: "Geospatial BPO Services",
+                    description:
+                      "Partner with BigData Ghana to harness our specialized geospatial BPO solutions and achieve sustainable growth and competitive advantage.",
+                  },
+                  {
+                    title: "GeoAI Services",
+                    description:
+                      "GeoAI services focus on elevating geospatial data with artificial intelligence and machine learning. ",
+                  },
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: index * 0.15 }}
+                    viewport={{ once: false }}
+                    className="relative pl-8"
+                  >
+                    <div
+                      className={`absolute left-0 top-1 h-6 w-0.5 ${services[index].color}`}
+                    ></div>
+                    <h4 className="mb-2 text-lg font-medium text-gray-900 dark:text-white">
+                      {item.title}
+                    </h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      {item.description}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+
         {/* Services Grid */}
         <div className="grid gap-8 md:grid-cols-3">
           {services.map((service, index) => (
