@@ -1,5 +1,4 @@
 "use client";
-import SectionHeader from "../Common/SectionHeader";
 import SingleTestimonial from "./SingleTestimonial";
 import { testimonialData } from "./testimonialData";
 
@@ -25,7 +24,7 @@ const WhatWeOffer = () => {
 
       <div className="animate_top mx-auto mt-15 max-w-c-1235 px-4 md:px-8 xl:mt-20 xl:px-0">
         <div className="grid grid-cols-1 gap-7.5 md:grid-cols-2 lg:grid-cols-3">
-          {testimonialData.slice(0, 3).map((review) => (
+          {testimonialData.map((review) => (
             <SingleTestimonial key={review?.id} review={review} />
           ))}
         </div>

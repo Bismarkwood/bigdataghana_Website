@@ -4,32 +4,85 @@ import { FiLinkedin, FiTwitter, FiGithub } from "react-icons/fi";
 
 const team = [
   {
+    id: 0,
     name: "Henry Kwamena Baffoe",
     role: "Managing Director",
     bio: "",
-    img: "/images/logo/MrBaffoeGrid.png",
-    social: { linkedin: "#", twitter: "#" },
+    img: "/images/team/baffour.jpeg",
+    social: {
+      linkedin: "https://www.linkedin.com/in/henry-kwamena-baffoe-b35324100/",
+    },
   },
   {
-    name: "Philip Okoampah Kwaning",
-    role: "Deputy Managing Director, Business Intelligence Analyst",
+    id: 1,
+    name: "Michael Patrick",
+    role: "Data and AI Engineer",
     bio: "",
-    img: "/images/logo/MrOkoampahGrid.png",
-    social: { linkedin: "#", github: "#" },
+    img: "/images/team/michael.jpeg",
+    social: { linkedin: "#" },
   },
   {
-    name: "Nana Yaa Fordwour",
-    role: "Administrative Assistant",
+    id: 2,
+    name: "Priscilla Fianu",
+    role: "Cloud Infrastructure Administrator/ Data Protection Supervisor",
     bio: "",
-    img: "/images/logo/NanaYaaGrid.png",
-    social: { linkedin: "#", twitter: "#" },
+    img: "/images/team/priscilla.jpeg",
+    social: {
+      linkedin: "https://www.linkedin.com/in/priscilla-fianu-849b90227/",
+      github: "#",
+    },
   },
   {
-    name: "Daniel Kumah",
-    role: "Cloud Infrastructure Administrator",
+    id: 3,
+    name: "Jaden Kodjo Miles",
+    role: "Software Engineer",
     bio: "",
-    img: "/images/logo/DannyGrid.png",
-    social: { linkedin: "#", dribbble: "#" },
+    img: "/images/team/jaden.jpeg",
+    social: { linkedin: "www.linkedin.com/in/jaden-kodjo-miles" },
+  },
+  {
+    id: 4,
+    name: "Nanayaa Fordwour Agyakoma",
+    role: "Finance/ Admin",
+    bio: "",
+    img: "/images/logo/NanaYaaGrid.jpeg",
+    social: {
+      linkedin:
+        "https://www.linkedin.com/in/yaa-fordwour-4a052b194?trk=contact-info",
+    },
+  },
+
+  {
+    id: 5,
+    name: "Andrews Azotwin Atibila",
+    role: "AWS Cloud Infrastructure Assistant",
+    bio: "",
+    img: "/images/team/DannyGrid.png",
+    social: {
+      linkedin:
+        " https://www.linkedin.com/in/andrewsatibila?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    },
+  },
+
+  {
+    id: 6,
+    name: "Bismark Gyebi Duah",
+    role: "Product Designer",
+    bio: "",
+    img: "/images/team/bismark.jpeg",
+    social: {
+      linkedin:
+        "https://www.linkedin.com/in/bismark-gyebi-duah-393ba7250?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    },
+  },
+
+  {
+    id: 7,
+    name: "Justin Nyantakyi",
+    role: "GIS and Remote Sensing Lead",
+    bio: "",
+    img: "/images/team/justin.jpeg",
+    social: { linkedin: "#" },
   },
 ];
 
@@ -133,7 +186,7 @@ export default function TeamPage() {
       </motion.section>
 
       {/* Team Grid */}
-      <section className="mx-auto max-w-7xl px-4 py-10  sm:px-6 lg:px-8">
+      <section className="mx-auto px-4 py-10  sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -142,7 +195,7 @@ export default function TeamPage() {
           className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 "
         >
           {team.map((member) => (
-            <TeamCard key={member.name} member={member} />
+            <TeamCard key={member.id} member={member} />
           ))}
         </motion.div>
       </section>

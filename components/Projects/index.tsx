@@ -114,9 +114,7 @@ export default function ProjectsCard() {
         {/* Projects Grid */}
         <div className="mb-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
-            <>
-              <ProjectCard key={index} project={project} index={index} />
-            </>
+            <ProjectCard key={index} project={project} index={index} />
           ))}
         </div>
         <motion.div
@@ -127,19 +125,17 @@ export default function ProjectsCard() {
           className="mb-10 text-center"
         >
           <h2 className="mb-4 text-4xl font-light text-gray-900 dark:text-white">
-            Client <span className="font-medium text-red-600">Solutionts</span>
+            Client <span className="font-medium text-red-600">Solutions</span>
           </h2>
           <div className="mx-auto h-0.5 w-24 bg-red-600" />
         </motion.div>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {clientProjects.map((clientProject, index) => (
-            <>
-              <ClientProjectCard
-                key={index}
-                clientProject={clientProject}
-                index={index}
-              />
-            </>
+            <ClientProjectCard
+              key={index}
+              clientProject={clientProject}
+              index={index}
+            />
           ))}
         </div>
 
