@@ -29,7 +29,6 @@ const team = [
     img: "/images/team/priscilla.jpeg",
     social: {
       linkedin: "https://www.linkedin.com/in/priscilla-fianu-849b90227/",
-      github: "#",
     },
   },
   {
@@ -45,7 +44,7 @@ const team = [
     name: "Nanayaa Fordwour Agyakoma",
     role: "Finance/ Admin",
     bio: "",
-    img: "/images/logo/NanaYaaGrid.jpeg",
+    img: "/images/team/team.jpg",
     social: {
       linkedin:
         "https://www.linkedin.com/in/yaa-fordwour-4a052b194?trk=contact-info",
@@ -57,7 +56,7 @@ const team = [
     name: "Andrews Azotwin Atibila",
     role: "AWS Cloud Infrastructure Assistant",
     bio: "",
-    img: "/images/team/DannyGrid.png",
+    img: "/images/team/team.jpg",
     social: {
       linkedin:
         " https://www.linkedin.com/in/andrewsatibila?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
