@@ -25,7 +25,7 @@ export default function OurCSRPage() {
     <>
       <BreadCrumb
         crumbTitle={{
-          title: "Corprate Social Responsibility",
+          title: "Corporate Social Responsibility",
           description: ``,
         }}
       />

@@ -9,7 +9,7 @@ const projects = [
       "The GAIMS Platform was built following the Open Up Guideline for Agriculture developed by GODAN and Open Data Charter, with Data licensed under the Open Data Commons Open Database License (ODbL).",
     tags: ["2020", "Flutter", "MongoDB"],
     image: "/images/logo/GAIMS2.png",
-    links: [{ type: "demo", url: "" }],
+    links: [{ type: "demo", url: "#" }],
     accentColor: "bg-red-700",
   },
   {
@@ -18,7 +18,7 @@ const projects = [
       "SME Digital is a software solution that provides an opportunity for Small and Medium-sized Enterprises to leverage on modern data technology solutions to manage and grow their businesses.",
     tags: ["2020", "Flutter", "MongoDB"],
     image: "/images/logo/SMEDIGITAL.png",
-    links: [{ type: "demo", url: "https://smedigitalgh.com/" }],
+    links: [{ type: "demo", url: "#" }],
     accentColor: "bg-red-700",
   },
 
@@ -37,7 +37,7 @@ const projects = [
       "VirtualSoft ID provides an opportunity for businesses to leverage on modern data technology solutions to speed up their processes.",
     tags: ["2020", "React", "Nest"],
     image: "/images/logo/virtualsoftid.png",
-    links: [{ type: "demo", url: "https://vsid.bigdataghana.com" }],
+    links: [{ type: "demo", url: "#" }],
     accentColor: "bg-red-700",
   },
 
@@ -47,7 +47,7 @@ const projects = [
       "The BDG catalog is an initiative in line with BigData Ghana Limited's vision to provide a credible data backbone for accelerated development in Africa.",
     tags: ["2020", "React", "Nest"],
     image: "/images/logo/BDGCatalog.png",
-    links: [{ type: "demo", url: "https://catalog.bigdataghana.com" }],
+    links: [{ type: "demo", url: "#" }],
     accentColor: "bg-red-700",
   },
 ];
@@ -59,7 +59,7 @@ const clientProjects = [
       "The EC app was designed to help address Limited Data Accessibility, Old and Inconsistent Information on Results, Inconsistent Information on Polling Stations, Data security, and Complexity during elections",
     tags: ["2020", "React", "Nest"],
     image: "/images/logo/ECapp.png",
-    links: [{ type: "demo", url: "https://ecdata.bigdataghana.com/" }],
+    links: [{ type: "demo", url: "#" }],
     accentColor: "bg-red-700",
   },
   {
@@ -78,7 +78,7 @@ const clientProjects = [
       "A platform developed to provide spatially explicit data, translating low-level spatial data into high-level, easy-to-understand-and-manipulate data for stakeholders.",
     tags: ["2020", "React", "Nest"],
     image: "/images/logo/NFMS.png",
-    links: [{ type: "demo", url: "https://nfmsgh.bigdataghana.com" }],
+    links: [{ type: "demo", url: "#" }],
     accentColor: "bg-red-700",
   },
 
@@ -87,8 +87,8 @@ const clientProjects = [
     description:
       "The Visualise My Parliament project was conceived out of the need to further strengthen and extend data utilization among Members of parliament, Parliamentary staff, and the general public and other stakeholders.",
     tags: ["2021", "React", "Nest"],
-    image: "/images/logo/virtualsoftid.png",
-    links: [{ type: "demo", url: "https://parliament.bigdataghana.com/" }],
+    image: "/images/logo/VisualiseMyParliament.png",
+    links: [{ type: "demo", url: "#" }],
     accentColor: "bg-red-700",
   },
 ];
