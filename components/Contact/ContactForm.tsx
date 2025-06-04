@@ -79,6 +79,13 @@ export default function ContactForm() {
     }
   };
 
+  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+  if (!recaptchaSiteKey) {
+    throw new Error(
+      "RECAPTCHA_SITE_KEY is not defined in environment variables",
+    );
+  }
+
   return (
     <>
       {status === "success" && (
@@ -198,7 +205,7 @@ export default function ContactForm() {
 
         <div className="mb-6">
           <ReCAPTCHA
-            sitekey={"6Lc-HCcrAAAAABT54ryPAiPOGwqAGh5485UjriIL"}
+            sitekey={recaptchaSiteKey}
             onChange={(token) => setRecaptchaToken(token || "")}
             onExpired={() => setRecaptchaToken("")}
           />

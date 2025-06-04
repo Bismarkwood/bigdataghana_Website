@@ -16,7 +16,7 @@ export async function verifyRecaptcha(token: string): Promise<boolean> {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: `secret=6Lc-HCcrAAAAAIKZN48_8-MiMo-k6QjljsjTgYsL&response=${token}`,
+        body: `secret=${process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY}&response=${token}`,
       },
     );
 

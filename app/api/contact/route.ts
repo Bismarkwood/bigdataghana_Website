@@ -7,13 +7,13 @@ import nodemailer from "nodemailer";
 export async function POST(request: Request) {
   const formData = await request.json();
 
-  // // Validate reCAPTCHA
-  // if (!(await verifyRecaptcha(formData.recaptchaToken))) {
-  //   return NextResponse.json(
-  //     { error: "reCAPTCHA verification failed" },
-  //     { status: 400 },
-  //   );
-  // }
+  // Validate reCAPTCHA
+  if (!(await verifyRecaptcha(formData.recaptchaToken))) {
+    return NextResponse.json(
+      { error: "reCAPTCHA verification failed" },
+      { status: 400 },
+    );
+  }
 
   // Validate form data
   const { isValid, errors } = validateFormData(formData);
