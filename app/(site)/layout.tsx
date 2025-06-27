@@ -20,6 +20,7 @@ import ToasterContext from "../context/ToastContext";
 import WhatsAppWidget from "@/components/Whatsapp";
 import FloatEmail from "@/components/FloatEmail";
 import FloatCall from "@/components/FloatCall";
+import GoogleAnalytics from "@/components/Google/GoogleAnalytics";
 
 export default function RootLayout({
   children,
@@ -45,6 +46,7 @@ export default function RootLayout({
           <ScrollToTop />
           <Footer />
         </ThemeProvider>
+        <GoogleAnalytics ga_id={process.env.NEXT_PUBLIC_GA_ID || ""} />
       </body>
     </html>
   );
