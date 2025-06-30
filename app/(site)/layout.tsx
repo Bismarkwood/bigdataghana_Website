@@ -46,7 +46,7 @@ export default function RootLayout({
           <ScrollToTop />
           <Footer />
         </ThemeProvider>
-        {/* <GoogleAnalytics ga_id={process.env.NEXT_PUBLIC_GA_ID || ""} /> */}
+        <GoogleAnalytics ga_id={process.env.NEXT_PUBLIC_GA_ID || ""} />
       </body>
     </html>
   );
