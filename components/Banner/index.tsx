@@ -6,12 +6,6 @@ const Banner = () => {
     e.preventDefault();
   };
 
-  const bounceTransition = {
-    type: "spring",
-    stiffness: 300,
-    damping: 15,
-  };
-
   return (
     <section className="w-full">
       {/* Container for full-width image */}
