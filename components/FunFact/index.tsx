@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, Transition } from "framer-motion";
 
 const FunFact = () => {
-  const bounceTransition = {
+  const bounceTransition: Transition = {
     type: "spring",
     stiffness: 300,
     damping: 15,
@@ -56,15 +56,9 @@ const FunFact = () => {
 
           <motion.div
             variants={{
-              hidden: {
-                opacity: 0,
-                y: -20,
-              },
+              hidden: { opacity: 0, y: -20 },
 
-              visible: {
-                opacity: 1,
-                y: 0,
-              },
+              visible: { opacity: 1, y: 0 },
             }}
             initial="hidden"
             whileInView="visible"
@@ -84,15 +78,9 @@ const FunFact = () => {
           <div className="flex flex-wrap justify-center gap-8 lg:gap-42.5">
             <motion.div
               variants={{
-                hidden: {
-                  opacity: 0,
-                  y: -20,
-                },
+                hidden: { opacity: 0, y: -20 },
 
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                },
+                visible: { opacity: 1, y: 0 },
               }}
               initial="hidden"
               whileInView="visible"
@@ -107,15 +95,9 @@ const FunFact = () => {
             </motion.div>
             <motion.div
               variants={{
-                hidden: {
-                  opacity: 0,
-                  y: -20,
-                },
+                hidden: { opacity: 0, y: -20 },
 
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                },
+                visible: { opacity: 1, y: 0 },
               }}
               initial="hidden"
               whileInView="visible"
@@ -130,15 +112,9 @@ const FunFact = () => {
             </motion.div>
             <motion.div
               variants={{
-                hidden: {
-                  opacity: 0,
-                  y: -20,
-                },
+                hidden: { opacity: 0, y: -20 },
 
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                },
+                visible: { opacity: 1, y: 0 },
               }}
               initial="hidden"
               whileInView="visible"

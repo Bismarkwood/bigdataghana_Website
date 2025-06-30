@@ -1,11 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Transition } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
 const AboutSummary = () => {
-  const bounceTransition = {
+  const bounceTransition: Transition = {
     type: "spring",
     stiffness: 300,
     damping: 15,
@@ -42,10 +42,7 @@ const AboutSummary = () => {
               whileInView="visible"
               whileHover={{
                 scale: 0.95, // Zoom out effect on hover
-                transition: {
-                  duration: 0.4,
-                  ease: "easeOut",
-                },
+                transition: { duration: 0.4, ease: "easeOut" },
               }}
               transition={{
                 duration: 1,

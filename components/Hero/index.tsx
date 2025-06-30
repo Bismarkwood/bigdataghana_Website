@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, Transition } from "framer-motion";
 import Link from "next/link";
 import { CountUp } from "use-count-up";
 
@@ -48,7 +48,7 @@ const Hero = () => {
   const MyClient = () => <CountUp isCounting end={380} duration={3.4} />;
   const MyLand = () => <CountUp isCounting end={1520} duration={3.6} />;
 
-  const bounceTransition = {
+  const bounceTransition: Transition = {
     type: "spring",
     stiffness: 300,
     damping: 15,

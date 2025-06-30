@@ -1,16 +1,13 @@
 "use client";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, Transition } from "framer-motion";
 
-type CrumbTitle = {
-  title: string;
-  description: string;
-};
+type CrumbTitle = { title: string; description: string };
 
 const BreadCrumb = ({ crumbTitle }: { crumbTitle: CrumbTitle }) => {
   const { title, description } = crumbTitle;
 
-  const bounceTransition = {
+  const bounceTransition: Transition = {
     type: "spring",
     stiffness: 300,
     damping: 15,

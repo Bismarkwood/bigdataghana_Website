@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, Transition } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -8,7 +8,7 @@ const AWS = () => {
     e.preventDefault();
   };
 
-  const bounceTransition = {
+  const bounceTransition: Transition = {
     type: "spring",
     stiffness: 300,
     damping: 15,
