@@ -1,6 +1,6 @@
 "use client"; // Required for Swiper (client-side component)
 
-import { Autoplay } from "swiper"; // Updated import for Swiper v9+
+import { Autoplay } from "swiper/modules"; // Updated import for Swiper v9+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css"; // Core Swiper styles
 import Image from "next/image";

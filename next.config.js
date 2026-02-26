@@ -2,14 +2,14 @@
 
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
+  //swcMinify: true,
   images: {
-    domains: ["localhost"],
     remotePatterns: [
       {
         protocol: "https",
         hostname: "cdn.sanity.io",
         port: "",
+        pathname: "/images/**",
       },
     ],
   },
