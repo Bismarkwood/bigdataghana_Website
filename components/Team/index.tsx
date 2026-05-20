@@ -70,6 +70,17 @@ const team = [
     img: "/images/team/amram-afriyie.png",
     social: {},
   },
+
+  {
+    id: 11,
+    name: "Nancy Wayua",
+    role: "Remote Sensing Analyst",
+    bio: "",
+    img: "/images/team/nancy-wayua.png",
+    social: {
+      linkedin: "https://www.linkedin.com/in/nancy-wayua-317905261",
+    },
+  },
 ];
 
 const TeamCard = ({ member }: { member: any }) => (

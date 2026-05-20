@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const Footer = () => {
   return (
@@ -42,6 +43,7 @@ const Footer = () => {
                 <p className="mb-10 mt-5 text-justify text-gray-400">
                   Inspired Innovation for development
                 </p>
+                <LanguageSwitcher />
 
                 <motion.div
                   variants={{

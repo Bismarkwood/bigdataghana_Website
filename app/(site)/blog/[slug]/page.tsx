@@ -8,6 +8,7 @@ import RelatedPost from "@/components/BlogPost/RelatedPost";
 import SharePost from "@/components/BlogPost/SharePost";
 import BlogSidebar from "@/components/BlogPost/BlogSidebar";
 import BlogUX from "@/components/BlogPost/BlogUX";
+import ArticleContent from "@/components/BlogPost/ArticleContent";
 
 /** Calculate reading time (words / 200 WPM, rounded up) */
 function calcReadingTime(text: string) {
@@ -148,6 +149,9 @@ As we continue to expand our reach, our focus remains on scalability and accessi
               </figure>
 
               {/* Article Body */}
+              {post.content ? (
+                <ArticleContent content={post.content} excerpt={post.excerpt} />
+              ) : (
               <div className="article-content">
                 {/* Lead paragraph */}
                 <p className="text-lg font-semibold leading-relaxed text-gray-900 dark:text-gray-100 mb-8 border-l-4 border-red-600 pl-5">
@@ -223,6 +227,7 @@ As we continue to expand our reach, our focus remains on scalability and accessi
                   </div>
                 </div>
               </div>
+              )}
 
               {/* Tags & Share bar */}
               <div className="mt-12 flex flex-wrap items-center justify-between gap-4 py-6 border-y border-gray-100 dark:border-gray-800">
