@@ -22,7 +22,7 @@ const BlogPage = async () => {
   return (
     <>
       {/* Hero Banner */}
-      <BreadCrumb crumbTitle={{ title: "Our News", description: "" }} />
+      <BreadCrumb crumbTitle={{ title: "Our News/Events", description: "" }} />
 
       {/* BBC-style Category Navigation Bar */}
       <div className="border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-black sticky top-16 z-30">

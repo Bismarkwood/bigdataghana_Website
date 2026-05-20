@@ -9,6 +9,7 @@ import SharePost from "@/components/BlogPost/SharePost";
 import BlogSidebar from "@/components/BlogPost/BlogSidebar";
 import BlogUX from "@/components/BlogPost/BlogUX";
 import ArticleContent from "@/components/BlogPost/ArticleContent";
+import EventGallery from "@/components/BlogPost/EventGallery";
 
 /** Calculate reading time (words / 200 WPM, rounded up) */
 function calcReadingTime(text: string) {
@@ -77,7 +78,7 @@ As we continue to expand our reach, our focus remains on scalability and accessi
           <nav className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-gray-400">
             <Link href="/" className="hover:text-red-600 transition-colors">Home</Link>
             <span className="opacity-30">/</span>
-            <Link href="/blog" className="hover:text-red-600 transition-colors">News</Link>
+            <Link href="/blog" className="hover:text-red-600 transition-colors">News/Events</Link>
             <span className="opacity-30">/</span>
             <span className="text-red-600 truncate max-w-[220px]">{post.tags[0]}</span>
           </nav>
@@ -227,6 +228,11 @@ As we continue to expand our reach, our focus remains on scalability and accessi
                   </div>
                 </div>
               </div>
+              )}
+
+              {/* Event Gallery */}
+              {post.galleryImages && (
+                <EventGallery images={post.galleryImages} eventTitle={post.title} />
               )}
 
               {/* Tags & Share bar */}

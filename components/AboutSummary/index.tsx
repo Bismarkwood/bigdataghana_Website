@@ -56,14 +56,14 @@ const AboutSummary = () => {
             >
               <div className="relative mx-auto aspect-[4/3] overflow-hidden rounded-lg lg:aspect-[588/526.5]">
                 <Image
-                  src="/images/logo/priscilla.jpg"
+                  src="/images/about/about-group.jpg"
                   alt="About"
                   className="object-cover dark:hidden"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <Image
-                  src="/images/logo/priscilla.jpg"
+                  src="/images/about/about-group.jpg"
                   alt="About"
                   className="hidden object-cover dark:block"
                   fill

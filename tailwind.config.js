@@ -141,12 +141,16 @@ module.exports = {
           "0%": { opacity: "0", transform: "translate(-50%, 20px)" },
           "100%": { opacity: "1", transform: "translate(-50%, 0)" },
         },
+        shimmer: {
+          "100%": { transform: "translateX(100%)" },
+        },
       },
       animation: {
         line1: "line 3s linear infinite",
         line2: "line 6s linear infinite",
         line3: "line 9s linear infinite",
         "fade-in": "fade-in 0.5s ease-out forwards",
+        shimmer: "shimmer 1.5s ease-in-out infinite",
       },
     },
   },

@@ -4,7 +4,13 @@ import { motion, Transition } from "framer-motion";
 
 type CrumbTitle = { title: string; description: string };
 
-const BreadCrumb = ({ crumbTitle }: { crumbTitle: CrumbTitle }) => {
+const BreadCrumb = ({
+  crumbTitle,
+  bgImage = "/images/logo/splash.jpg",
+}: {
+  crumbTitle: CrumbTitle;
+  bgImage?: string;
+}) => {
   const { title, description } = crumbTitle;
 
   const bounceTransition: Transition = {
@@ -19,13 +25,12 @@ const BreadCrumb = ({ crumbTitle }: { crumbTitle: CrumbTitle }) => {
       <div className="relative h-[300px] w-full md:h-[400px]">
         {/* Background Image */}
         <Image
-          src="/images/logo/splash.jpg"
+          src={bgImage}
           alt="Hero Banner"
           fill
           className="object-cover object-center"
           priority
-          quality={90}
-          sizes="100vw"
+          unoptimized
         />
 
         {/* Overlay Gradient */}

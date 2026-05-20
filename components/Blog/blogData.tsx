@@ -2,6 +2,15 @@ import { Blog } from "@/types/blog";
 
 const BlogData: Blog[] = [
   {
+    _id: 9,
+    mainImage: "/images/blog/generative-ai-forum.jpg",
+    title: "BigData Ghana Hosts Generative AI Executive Forum to Explore the Future of Intelligent Business in Africa",
+    metadata:
+      "BigData Ghana recently hosted a high-level Generative AI Executive Forum focused on practical AI opportunities for African businesses.",
+    publishedAt: "2026-05-20",
+    slug: "bigdata-ghana-hosts-generative-ai-executive-forum",
+  },
+  {
     _id: 6,
     mainImage: "/images/blog/genai-challenge.png",
     title: "BigData Ghana Selected Among Winners of the GenAI for Geospatial Challenge",

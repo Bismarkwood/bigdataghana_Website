@@ -10,6 +10,7 @@ const Banner        = dynamic(() => import("@/components/Banner"));
 const WhatWeOffer   = dynamic(() => import("@/components/WhatWeOffer"));
 const OurClient     = dynamic(() => import("@/components/OurClients"));
 const Testimonial   = dynamic(() => import("@/components/Testimonial"));
+const Blog          = dynamic(() => import("@/components/Blog"));
 const CTA           = dynamic(() => import("@/components/CTA"));
 
 export const metadata: Metadata = {
@@ -34,6 +35,7 @@ export default function Home() {
       <WhatWeOffer />
       <OurClient />
       <Testimonial />
+      <Blog />
       <CTA />
     </main>
   );

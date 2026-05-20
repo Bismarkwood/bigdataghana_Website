@@ -23,6 +23,7 @@ export default function AboutPage() {
           title: "About Us",
           description: `Empowering African enterprises with spatial data systems, AI processing, and resilient cloud infrastructure.`,
         }}
+        bgImage="/images/about/about-hero-group.jpg"
       />
       <About />
       <OurMission />

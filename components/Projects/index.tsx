@@ -134,8 +134,18 @@ const projects = [
     links: [{ type: "demo", url: "#" }],
     accentColor: "from-red-700 to-red-900",
   },
-
-
+  {
+    id: "c7",
+    type: "client",
+    category: "data",
+    title: "Data Analysis for Indomie",
+    subtitle: "Promotion Analytics",
+    description: "This project analyzed data from an Indomie scratch card promotion to gain insights into the demand for Indomie across different regions of Ghana.",
+    tags: ["Data Analysis", "Insights", "GIS"],
+    image: "/images/brand/indomie.jpg",
+    links: [{ type: "demo", url: "#" }],
+    accentColor: "from-red-600 to-yellow-500",
+  },
 ];
 
 const ProjectCard = ({ project }) => {

@@ -217,7 +217,7 @@ export default function BlogIndex() {
             {/* ALSO IN THE NEWS — ranked list */}
             {moreStories.length > 0 && (
               <div>
-                {!isSearching && <SectionLabel text="Also in the News" />}
+                {!isSearching && <SectionLabel text="Also in the News/Events" />}
                 <div className="border-t border-gray-100 dark:border-gray-800">
                   {moreStories.map((post, i) => (
                     <ListCard key={post.id} post={post} rank={i + 1} />
