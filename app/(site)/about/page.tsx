@@ -1,22 +1,18 @@
-import SidebarLink from "@/components/Docs/SidebarLink";
 import { Metadata } from "next";
-import Feature from "@/components/Features";
-import About from "@/components/About";
-import FeaturesTab from "@/components/FeaturesTab";
-import FunFact from "@/components/FunFact";
-import Blog from "@/components/Blog";
-import Testimonial from "@/components/Testimonial";
+import dynamic from "next/dynamic";
 import BreadCrumb from "@/components/BreadCrumb";
-import OurClients from "@/components/OurClients";
+import About from "@/components/About";
 import OurMission from "@/components/Missions";
 import Banner2 from "@/components/Banner/index_2";
+import OurClients from "@/components/OurClients";
+import Certifications from "@/components/Certifications";
 import Banner from "@/components/Banner/index";
+import Testimonial from "@/components/Testimonial";
 
 export const metadata: Metadata = {
-  title: "BIG DATA GHANA",
-
-  // other metadata
-  description: "",
+  title: "About Us | BigData Ghana — Geospatial IT, Data & AI Solutions",
+  description:
+    "Empowering businesses and organizations across Africa with cutting-edge data solutions tailored to drive growth, efficiency, and innovation.",
 };
 
 export default function AboutPage() {
@@ -25,15 +21,15 @@ export default function AboutPage() {
       <BreadCrumb
         crumbTitle={{
           title: "About Us",
-          description: ``,
+          description: `Empowering African enterprises with spatial data systems, AI processing, and resilient cloud infrastructure.`,
         }}
       />
       <About />
       <OurMission />
       <Banner2 />
       <OurClients />
+      <Certifications />
       <Banner />
-      {/* <Feature /> */}
       <Testimonial />
     </>
   );

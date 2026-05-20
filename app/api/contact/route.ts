@@ -1,6 +1,6 @@
 // app/api/contact/route.ts
 import { verifyRecaptcha } from "@/lib/recaptcha";
-import { validateFormData } from "@/lib/validation";
+import { validateFormData, escapeHtml } from "@/lib/validation";
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
@@ -42,10 +42,10 @@ export async function POST(request: Request) {
       subject: `New Contact: ${formData.name}`,
       html: `
           <h3>New Contact Submission</h3>
-          <p><strong>Name:</strong> ${formData.name}</p>
-          <p><strong>Email:</strong> ${formData.email}</p>
+          <p><strong>Name:</strong> ${escapeHtml(formData.name)}</p>
+          <p><strong>Email:</strong> ${escapeHtml(formData.email)}</p>
           <p><strong>Message:</strong></p>
-          <p>${formData.message}</p>
+          <p>${escapeHtml(formData.message)}</p>
           <hr>
           <p>Sent via secure form on ${new Date().toLocaleString()}</p>
         `,

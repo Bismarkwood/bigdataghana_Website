@@ -36,7 +36,9 @@ export default function ContactForm() {
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
       newErrors.email = "Invalid email format";
     if (!formData.message.trim()) newErrors.message = "Message is required";
-    if (!recaptchaToken) newErrors.recaptcha = "Please complete the reCAPTCHA";
+    if (recaptchaSiteKey && !recaptchaToken) {
+      newErrors.recaptcha = "Please complete the reCAPTCHA";
+    }
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -80,11 +82,6 @@ export default function ContactForm() {
   };
 
   const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
-  if (!recaptchaSiteKey) {
-    throw new Error(
-      "RECAPTCHA_SITE_KEY is not defined in environment variables",
-    );
-  }
 
   return (
     <>
@@ -203,16 +200,18 @@ export default function ContactForm() {
           ></textarea>
         </div>
 
-        <div className="mb-6">
-          <ReCAPTCHA
-            sitekey={recaptchaSiteKey}
-            onChange={(token) => setRecaptchaToken(token || "")}
-            onExpired={() => setRecaptchaToken("")}
-          />
-          {errors.recaptcha && (
-            <p className="mt-1 text-sm text-red-500">{errors.recaptcha}</p>
-          )}
-        </div>
+        {recaptchaSiteKey && (
+          <div className="mb-6">
+            <ReCAPTCHA
+              sitekey={recaptchaSiteKey}
+              onChange={(token) => setRecaptchaToken(token || "")}
+              onExpired={() => setRecaptchaToken("")}
+            />
+            {errors.recaptcha && (
+              <p className="mt-1 text-sm text-red-500">{errors.recaptcha}</p>
+            )}
+          </div>
+        )}
 
         <button
           type="submit"

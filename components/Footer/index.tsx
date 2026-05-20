@@ -182,7 +182,7 @@ const Footer = () => {
                 </motion.div>
               </motion.div>
 
-              <div className="flex w-full flex-col gap-8 md:flex-row md:justify-between md:gap-0 lg:w-2/3 xl:w-7/12">
+              <div className="flex w-full flex-col gap-8 md:flex-row md:justify-between md:gap-0 lg:w-3/4 xl:w-9/12">
                 <motion.div
                   variants={{
                     hidden: {
@@ -279,6 +279,35 @@ const Footer = () => {
                         className="mb-3 inline-block text-gray-400 hover:text-red-600"
                       >
                         Data Analytics and AI
+                      </Link>
+                    </li>
+                  </ul>
+                </motion.div>
+
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, y: -20 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  initial="hidden"
+                  whileInView="visible"
+                  transition={{ duration: 1, delay: 0.1 }}
+                  viewport={{ once: true }}
+                  className="animate_top w-full md:w-auto"
+                >
+                  <h4 className="mb-9 text-itemtitle2 font-medium text-white dark:text-white">
+                    Legal
+                  </h4>
+
+                  <ul>
+                    <li>
+                      <Link href="/legal/terms" className="mb-3 inline-block text-gray-400 hover:text-red-600">
+                        Terms of Service
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/legal/privacy" className="mb-3 inline-block text-gray-400 hover:text-red-600">
+                        Privacy Policy
                       </Link>
                     </li>
                   </ul>

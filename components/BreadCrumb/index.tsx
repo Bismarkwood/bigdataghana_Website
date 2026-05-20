@@ -49,7 +49,7 @@ const BreadCrumb = ({ crumbTitle }: { crumbTitle: CrumbTitle }) => {
           {/* Content Container */}
           <div className="relative z-10 flex h-full items-center">
             <motion.div
-              className="container mx-auto px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20"
+              className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8 }}

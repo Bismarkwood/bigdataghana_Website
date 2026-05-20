@@ -2,46 +2,31 @@ import { Blog } from "@/types/blog";
 
 const BlogData: Blog[] = [
   {
-    _id: 1,
-    mainImage: "/images/GC 1.jpg",
-    title: "Land Acquisition",
+    _id: 6,
+    mainImage: "/images/blog/genai-challenge.png",
+    title: "BigData Ghana Selected Among Winners of the GenAI for Geospatial Challenge",
     metadata:
-      "Royal Kingdom Estate ensures efficient land acquisition processes, minimizing bureaucratic obstacles to foster trust and transparency with our clients.",
-  },
-  {
-    _id: 2,
-    mainImage: "/images/about/istockphoto.jpg",
-    title: "General Construction",
-    metadata:
-      "Many find construction to be a stressful endeavor, but for us at Royal Kingdom Estate, it's a labor fueled by passion — Your obstacles inspire us to excel.",
-  },
-  {
-    _id: 2,
-    mainImage: "/images/construct.jpg",
-    title: "Facility Management.",
-    metadata:
-      "By utilizing cutting-edge software and equipment, along with careful cost analysis and attention to specifications, we aim to streamline project execution.",
+      "BigData Ghana has been selected as one of the winning teams in the GenAI for Geospatial Challenge – EMEA Edition, an initiative by AWS and thriveGEO.",
+    publishedAt: "2026-05-14",
+    slug: "genai-geospatial-challenge-winners",
   },
   {
     _id: 1,
-    mainImage: "/images/DSC08054.jpg",
-    title: "Project Management",
+    mainImage: "/images/features/ITC.png",
+    title: "BigData Ghana and other Tech Companies meet Farmers",
     metadata:
-      "By utilizing cutting-edge software and equipment, and carefully weighing costs and specifications, we ensure that our project execution is efficient and optimized. This approach transforms the entire process into a valuable learning experience for both us and our clients.",
+      "Increasingly, farmers need technology to meet the demands of importers. To bridge that gap, 13 Ghanaian tech companies collaborated to provide digital solutions.",
+    publishedAt: "2023-05-03",
+    slug: "tech-companies-meet-farmers",
   },
   {
     _id: 2,
-    mainImage: "/images/Foto.jpg",
-    title: "Architecture & Engineering",
+    mainImage: "/images/features/NTB1.png",
+    title: "BigData Ghana and Amazon Web Services (AWS)",
     metadata:
-      "Our team of Architects focuses on the aesthetic, functional, and spatial design aspects, while our architectural engineers apply engineering principles and technology to develop essential systems for each of our building projects.",
-  },
-  {
-    _id: 2,
-    mainImage: "/images/room12-1.jpg",
-    title: "Interior Design",
-    metadata:
-      "We specialize in crafting exceptional interior designs tailored to the unique preferences and needs of our clients.",
+      "We hosted a delegation from Amazon Web Services, marking a milestone in our journey as a Local Specialist Partner of AWS in the region.",
+    publishedAt: "2022-09-05",
+    slug: "bigdata-ghana-aws-partnership",
   },
 ];
 

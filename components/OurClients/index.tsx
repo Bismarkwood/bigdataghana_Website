@@ -15,7 +15,8 @@ const clients = [
   { id: 6, logo: "/images/brand/uglogo.png", alt: "Company 6" },
   { id: 7, logo: "/images/brand/pharmacy_council.png", alt: "Company 7" },
   { id: 8, logo: "/images/brand/africa_centre.png", alt: "Company 8" },
-  // { id: 9, logo: "/images/brand/snv.png", alt: "Company 9" },
+  { id: 9, logo: "/images/logo/ntmel.png", alt: "NTMEL" },
+  { id: 10, logo: "/images/logo/ntl.png", alt: "Nationwide Technologies" },
 ];
 
 export default function OurClients() {

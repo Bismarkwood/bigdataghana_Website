@@ -13,14 +13,7 @@ const team = [
       linkedin: "https://www.linkedin.com/in/henry-kwamena-baffoe-b35324100/",
     },
   },
-  {
-    id: 1,
-    name: "Michael Patrick",
-    role: "Data and AI Engineer",
-    bio: "",
-    img: "/images/team/michael.jpeg",
-    social: { linkedin: "#" },
-  },
+
   {
     id: 2,
     name: "Priscilla Fianu",
@@ -31,14 +24,7 @@ const team = [
       linkedin: "https://www.linkedin.com/in/priscilla-fianu-849b90227/",
     },
   },
-  {
-    id: 3,
-    name: "Jaden Kodjo Miles",
-    role: "Software Engineer",
-    bio: "",
-    img: "/images/team/jaden.jpeg",
-    social: { linkedin: "www.linkedin.com/in/jaden-kodjo-miles" },
-  },
+
   {
     id: 4,
     name: "Nanayaa Fordwour Agyakoma",
@@ -51,24 +37,14 @@ const team = [
     },
   },
 
-  {
-    id: 5,
-    name: "Andrews Azotwin Atibila",
-    role: "AWS Cloud Infrastructure Assistant",
-    bio: "",
-    img: "/images/team/andrews.jpeg",
-    social: {
-      linkedin:
-        " https://www.linkedin.com/in/andrewsatibila?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-    },
-  },
+
 
   {
     id: 6,
     name: "Bismark Gyebi Duah",
     role: "Product Designer",
     bio: "",
-    img: "/images/team/bismark.jpeg",
+    img: "/images/team/bismark-new.jpeg",
     social: {
       linkedin:
         "https://www.linkedin.com/in/bismark-gyebi-duah-393ba7250?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
@@ -76,75 +52,68 @@ const team = [
   },
 
   {
-    id: 7,
-    name: "Justin Nyantakyi",
-    role: "GIS and Remote Sensing Lead",
+    id: 8,
+    name: "Nana Akua Afra Owusu-Addo",
+    role: "Technical Writer (Earth Observation Desk)",
     bio: "",
-    img: "/images/team/justin.jpeg",
-    social: { linkedin: "#" },
+    img: "/images/team/nana.jpeg",
+    social: {
+      linkedin: "https://www.linkedin.com/in/nana-akua-afra-owusu-addo",
+    },
+  },
+
+  {
+    id: 10,
+    name: "Steffel Amram Afriyie",
+    role: "Earth Observation Desk Coordinator / International Business Developer",
+    bio: "",
+    img: "/images/team/amram-afriyie.png",
+    social: {},
   },
 ];
 
-const TeamCard = ({ member }) => (
+const TeamCard = ({ member }: { member: any }) => (
   <motion.div
-    initial={{ opacity: 0, y: 50 }}
+    initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: false, margin: "-50px" }}
+    viewport={{ once: true }}
     transition={{ duration: 0.6 }}
-    className="group relative overflow-hidden rounded-xl bg-white shadow-lg dark:bg-gray-900"
+    className="group relative transition-all duration-500 hover:-translate-y-2"
   >
-    <div className="relative h-80 overflow-hidden">
+    {/* Image Container - Slightly shorter aspect ratio */}
+    <div className="relative mb-5 overflow-hidden aspect-[4/5] bg-gray-100 rounded-lg shadow-sm group-hover:shadow-xl group-hover:shadow-red-600/5 transition-all duration-500">
       <motion.img
         src={member.img}
         alt={member.name}
-        className="h-full w-full object-cover"
+        className="h-full w-full object-cover transition-all duration-700 group-hover:scale-105"
         initial={{ scale: 1 }}
-        whileHover={{ scale: 1.05 }}
-        transition={{ duration: 0.5 }}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+      <div className="absolute inset-0 bg-gradient-to-t from-red-600/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
     </div>
 
-    <div className="p-6">
-      <motion.h3
-        className="mb-1 text-2xl font-bold text-gray-900 dark:text-white"
-        whileHover={{ color: "#b91c1c" }}
-        transition={{ duration: 0.3 }}
-      >
+    {/* Info Area - More compact */}
+    <div className="space-y-2 px-2">
+      <p className="text-[10px] font-black uppercase tracking-[0.2em] text-red-600">
+        {member.role}
+      </p>
+      <h3 className="font-montserrat text-xl font-bold leading-tight text-gray-900 dark:text-white transition-colors duration-300 group-hover:text-red-600">
         {member.name}
-      </motion.h3>
-      <p className="mb-3 text-red-600">{member.role}</p>
-      <p className="mb-4 text-gray-600">{member.bio}</p>
-
-      <div className="flex space-x-4">
-        {member.social.linkedin && (
+      </h3>
+      
+      {/* LinkedIn Link - Minimalist */}
+      {member.social?.linkedin && member.social.linkedin !== "#" && (
+        <div className="pt-1">
           <motion.a
             href={member.social.linkedin}
-            whileHover={{ y: -3 }}
-            className="text-gray-500 hover:text-red-600"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-widest text-gray-400 hover:text-red-600 transition-colors"
           >
-            <FiLinkedin size={20} />
+            Connect
+            <FiLinkedin size={11} />
           </motion.a>
-        )}
-        {member.social.twitter && (
-          <motion.a
-            href={member.social.twitter}
-            whileHover={{ y: -3 }}
-            className="text-gray-500 hover:text-red-600"
-          >
-            <FiTwitter size={20} />
-          </motion.a>
-        )}
-        {member.social.github && (
-          <motion.a
-            href={member.social.github}
-            whileHover={{ y: -3 }}
-            className="text-gray-500 hover:text-red-600"
-          >
-            <FiGithub size={20} />
-          </motion.a>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   </motion.div>
 );
@@ -185,13 +154,13 @@ export default function TeamPage() {
       </motion.section>
 
       {/* Team Grid */}
-      <section className="mx-auto px-4 py-10  sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: false }}
           transition={{ duration: 0.6 }}
-          className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 "
+          className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4"
         >
           {team.map((member) => (
             <TeamCard key={member.id} member={member} />

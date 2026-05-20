@@ -1,27 +1,28 @@
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
-import Brands from "@/components/Brands";
-import Feature from "@/components/Features";
-import About from "@/components/About";
-import FeaturesTab from "@/components/FeaturesTab";
-import FunFact from "@/components/FunFact";
-import Integration from "@/components/Integration";
-import CTA from "@/components/CTA";
-import FAQ from "@/components/FAQ";
-import Pricing from "@/components/Pricing";
-import Contact from "@/components/Contact";
-import Blog from "@/components/Blog";
-import Testimonial from "@/components/Testimonial";
-import Banner from "@/components/Banner";
-import AboutSummary from "@/components/AboutSummary";
-import WhatWeOffer from "@/components/WhatWeOffer";
-import OurClient from "@/components/OurClients";
-import ServicesSlider from "@/components/ServicesSlider";
-export const metadata: Metadata = {
-  title: "Big Data Ghana",
 
-  // other metadata
-  description: "",
+// ── Lazy-load all below-fold sections ────────────────────────────────────────
+// Only Hero is above the fold and needs to be in the initial bundle.
+// Everything else loads after the page is interactive.
+const AboutSummary  = dynamic(() => import("@/components/AboutSummary"));
+const Banner        = dynamic(() => import("@/components/Banner"));
+const WhatWeOffer   = dynamic(() => import("@/components/WhatWeOffer"));
+const OurClient     = dynamic(() => import("@/components/OurClients"));
+const Testimonial   = dynamic(() => import("@/components/Testimonial"));
+const CTA           = dynamic(() => import("@/components/CTA"));
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://bigdataghana.com"),
+  title: "Big Data Ghana — Data, AI & Geospatial Solutions",
+  description:
+    "BigData Ghana provides cutting-edge data analytics, AI, cloud, and geospatial intelligence solutions for businesses across Africa.",
+  openGraph: {
+    title: "Big Data Ghana",
+    description:
+      "Data, AI & Geospatial Solutions for Africa",
+    images: [{ url: "/images/logo/splash.jpg" }],
+  },
 };
 
 export default function Home() {
@@ -33,6 +34,7 @@ export default function Home() {
       <WhatWeOffer />
       <OurClient />
       <Testimonial />
+      <CTA />
     </main>
   );
 }

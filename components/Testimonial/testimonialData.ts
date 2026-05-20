@@ -1,7 +1,7 @@
 import image1 from "@/public/images/logo/testimo1.png";
 import image2 from "@/public/images/logo/testimo2.png";
 import image3 from "@/public/images/logo/test.png";
-import image4 from "@/public/images/logo/kwame.png";
+// import image4 from "@/public/images/logo/kwame.png";
 import { Testimonial } from "@/types/testimonial";
 
 export const testimonialData: Testimonial[] = [
@@ -29,12 +29,4 @@ export const testimonialData: Testimonial[] = [
     content:
       "I am extremely grateful for the data analyst training program I participated in. This training has expanded my knowledge and skills and has made me efficient in delivering my duties in the firm. I know it is a huge boost to my career advancement. I would highly recommend this training to anyone who is interested in becoming a data analyst or wants to enhance their existing skills in the field.",
   },
-  // {
-  //   id: 4,
-  //   name: "Kwame",
-  //   designation: "Accra, Ghana",
-  //   image: image4,
-  //   content:
-  //     "APHL is pleased with the routing application developed by Bigdata Ghana Limited. The application has significantly improved our ability to support the National AIDS Control Program in tracking viral load specimens to testing sites and hospitals promptly and efficiently.The user interface is easy to navigate, and the application provides us with a wealth of valuable information, such as real-time traffic data and route planning suggestions. Your skilled team at BDG has been responsive to our needs throughout the development process and has worked closely with us to ensure that the application met all requirements. I appreciate your support",
-  // },
 ];

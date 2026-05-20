@@ -11,9 +11,9 @@ const Blog = async () => {
         <div className="animate_top mx-auto text-center">
           <SectionHeader
             headerInfo={{
-              title: `Services`,
-              subtitle: `What We Offer`,
-              description: `We offer seamless property solutions—from buying and selling to rentals and investment opportunities. With expert guidance, transparent deals, and personalized service, we help you find the perfect place to call home or grow your portfolio.`,
+              title: `Latest News`,
+              subtitle: `Insights & Innovation`,
+              description: `Stay updated with the latest breakthroughs in geospatial intelligence, generative AI, and our journey in transforming data into climate action across Africa.`,
             }}
           />
         </div>

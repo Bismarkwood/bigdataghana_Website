@@ -21,7 +21,7 @@
 
 @layer base {
   body {
-    @apply relative z-1 font-inter text-regular font-normal text-waterloo dark:text-manatee;
+    @apply relative z-1 font-sans text-regular font-normal text-waterloo dark:text-manatee;
   }
 }
 
@@ -54,6 +54,10 @@
   .img-white {
     filter: invert(0%) sepia(96%) saturate(15%) hue-rotate(249deg)
       brightness(100%) contrast(105%);
+  }
+
+  .writing-mode-vertical {
+    writing-mode: vertical-rl;
   }
 }
 

@@ -1,26 +1,21 @@
-"use client";
-
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import Lines from "@/components/Lines";
-import ScrollToTop from "@/components/ScrollToTop";
-import { ThemeProvider } from "next-themes";
-import { Inter, Montserrat } from "next/font/google";
+import ThemeProvider from "@/components/ThemeProvider";
+import { Montserrat } from "next/font/google";
+import ClientWidgets from "@/components/ClientWidgets";
 import "../globals.css";
-const inter = Inter({ subsets: ["latin"] });
 
+// ── Fonts ─────────────────────────────────────────────────────────────────
+// Only load Montserrat (Inter was declared but never applied)
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
   display: "swap",
-  weight: ["400", "500", "600", "700"], // Specify the weights you need
+  weight: ["400", "500", "600", "700"],
+  preload: true,
 });
 
-import ToasterContext from "../context/ToastContext";
-import WhatsAppWidget from "@/components/Whatsapp";
-import FloatEmail from "@/components/FloatEmail";
-import FloatCall from "@/components/FloatCall";
-import GoogleAnalytics from "@/components/Google/GoogleAnalytics";
+// ClientWidgets handles all the below-fold client-only components
 
 export default function RootLayout({
   children,
@@ -28,25 +23,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`dark:bg-black ${montserrat.className}`}>
+    <html lang="en" suppressHydrationWarning className={montserrat.variable}>
+      <body className="font-montserrat dark:bg-black">
         <ThemeProvider
           enableSystem={false}
           attribute="class"
           defaultTheme="light"
         >
-          {/* <Lines /> */}
           <Header />
-          <ToasterContext />
           {children}
-          <FloatCall />
-
-          <FloatEmail />
-          <WhatsAppWidget />
-          <ScrollToTop />
+          <ClientWidgets />
           <Footer />
         </ThemeProvider>
-        <GoogleAnalytics ga_id={process.env.NEXT_PUBLIC_GA_ID || ""} />
       </body>
     </html>
   );

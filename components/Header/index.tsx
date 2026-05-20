@@ -9,14 +9,14 @@ import menuData from "./menuData";
 
 const Header = () => {
   const [navigationOpen, setNavigationOpen] = useState(false);
-  const [dropdownToggler, setDropdownToggler] = useState(false);
   const [stickyMenu, setStickyMenu] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
 
   const pathUrl = usePathname();
 
   // Sticky menu
   const handleStickyMenu = () => {
-    if (window.scrollY >= 80) {
+    if (window.scrollY >= 50) {
       setStickyMenu(true);
     } else {
       setStickyMenu(false);
@@ -30,86 +30,72 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed left-0 top-0 z-99999 w-full py-1 ${
+      className={`fixed left-0 top-0 w-full z-50 transition-all duration-300 ${
         stickyMenu
-          ? "bg-white !py-1 shadow transition duration-100 dark:bg-black"
-          : ""
+          ? "bg-white/90 backdrop-blur-md shadow-sm dark:bg-black/90 dark:border-b dark:border-gray-800 py-2"
+          : "bg-transparent py-4"
       }`}
     >
-      <div className="relative mx-auto max-w-c-1390 items-center justify-between px-8 md:px-22 xl:flex 2xl:px-0">
-        <div className="flex w-full items-center justify-between xl:w-1/4">
-          <Link href="/" className="relative block h-[80px] w-[110px]">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        
+        {/* Left: Logo */}
+        <div className="flex items-center w-full xl:w-1/4">
+          <Link href="/" className="relative block h-[45px] w-[110px]">
             <Image
               src="/images/logo/app_logo.png"
               alt="logo"
               fill
               priority
-              className={` w-full object-contain  ${
-                pathUrl === "/"
-                  ? stickyMenu
-                    ? "hidden dark:block"
-                    : "block"
-                  : "hidden dark:block"
-              }`}
-            />
-            <Image
-              src="/images/logo/app_logo.png"
-              alt="logo"
-              fill
-              priority
-              className={` w-full object-contain  ${
-                pathUrl === "/"
-                  ? stickyMenu
-                    ? "dark:hidden"
-                    : "hidden"
-                  : "dark:hidden"
-              }`}
+              className="w-full object-contain dark:invert"
             />
           </Link>
+        </div>
 
-          {/* Hamburger Toggle BTN */}
+        {/* Hamburger Toggle BTN (Mobile) */}
+        <div className="flex xl:hidden items-center gap-4">
+          <ThemeToggler />
           <button
             aria-label="hamburger Toggler"
-            className="block xl:hidden"
             onClick={() => setNavigationOpen(!navigationOpen)}
+            className="text-gray-800 dark:text-white"
           >
-            <span className="relative block h-5.5 w-5.5 cursor-pointer">
+            <span className="relative block h-5 w-6 cursor-pointer">
               <span className="absolute right-0 block h-full w-full">
                 <span
-                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm ${
-                    stickyMenu ? "bg-black" : "bg-white"
-                  } delay-[0] duration-200 ease-in-out dark:bg-white ${
-                    !navigationOpen ? "!w-full delay-300" : "w-0"
+                  className={`relative left-0 top-0 my-1 block h-[2px] rounded-sm transition-all duration-200 ${
+                    navigationOpen ? "w-0" : "w-full"
+                  } ${
+                    stickyMenu || navigationOpen ? "bg-black dark:bg-white" : "bg-white"
                   }`}
                 ></span>
                 <span
-                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm ${
-                    stickyMenu ? "bg-black" : "bg-white"
-                  } delay-150 duration-200 ease-in-out dark:bg-white ${
-                    !navigationOpen ? "delay-400 !w-full" : "w-0"
+                  className={`relative left-0 top-0 my-1 block h-[2px] rounded-sm transition-all duration-200 ${
+                    navigationOpen ? "w-0" : "w-full"
+                  } ${
+                    stickyMenu || navigationOpen ? "bg-black dark:bg-white" : "bg-white"
                   }`}
                 ></span>
                 <span
-                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm ${
-                    stickyMenu ? "bg-black" : "bg-white"
-                  } delay-200 duration-200 ease-in-out dark:bg-white ${
-                    !navigationOpen ? "!w-full delay-500" : "w-0"
+                  className={`relative left-0 top-0 my-1 block h-[2px] rounded-sm transition-all duration-200 ${
+                    navigationOpen ? "w-0" : "w-full"
+                  } ${
+                    stickyMenu || navigationOpen ? "bg-black dark:bg-white" : "bg-white"
                   }`}
                 ></span>
               </span>
-              <span className="du-block absolute right-0 h-full w-full rotate-45">
+              <span className="absolute right-0 h-full w-full rotate-45">
                 <span
-                  className={`absolute left-2.5 top-0 block h-full w-0.5 rounded-sm ${
-                    stickyMenu ? "bg-black" : "bg-white"
-                  } delay-300 duration-200 ease-in-out dark:bg-white ${
-                    !navigationOpen ? "!h-0 delay-[0]" : "h-full"
+                  className={`absolute left-2.5 top-0 block h-full w-[2px] rounded-sm transition-all duration-200 ${
+                    navigationOpen ? "h-full" : "h-0"
+                  } ${
+                    stickyMenu || navigationOpen ? "bg-black dark:bg-white" : "bg-white"
                   }`}
                 ></span>
                 <span
-                  className={`delay-400 absolute left-0 top-2.5 block h-0.5 w-full rounded-sm ${
-                    stickyMenu ? "bg-black" : "bg-white"
-                  } duration-200 ease-in-out dark:bg-white ${
-                    !navigationOpen ? "!h-0 delay-200" : "h-0.5"
+                  className={`absolute left-0 top-2 block h-[2px] w-full rounded-sm transition-all duration-200 ${
+                    navigationOpen ? "h-[2px]" : "h-0"
+                  } ${
+                    stickyMenu || navigationOpen ? "bg-black dark:bg-white" : "bg-white"
                   }`}
                 ></span>
               </span>
@@ -117,66 +103,59 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Nav Menu Start */}
+        {/* Center: Desktop Nav */}
         <div
-          className={`invisible h-0 w-full items-center justify-between xl:visible xl:flex xl:h-auto xl:w-full ${
-            navigationOpen &&
-            "navbar !visible mt-4 h-auto max-h-[400px] rounded-md bg-white p-7.5 shadow-solid-5 dark:bg-blacksection xl:h-auto xl:p-0 xl:shadow-none xl:dark:bg-transparent"
+          className={`absolute left-0 top-[100%] w-full bg-white dark:bg-black xl:static xl:flex xl:w-auto xl:flex-1 xl:justify-center xl:bg-transparent xl:dark:bg-transparent ${
+            navigationOpen ? "block shadow-lg py-6 px-4" : "hidden xl:flex"
           }`}
         >
           <nav>
-            <ul className="flex flex-col gap-5 xl:flex-row xl:items-center xl:gap-10">
+            <ul className="flex flex-col xl:flex-row items-center gap-6 xl:gap-8">
               {menuData.map((menuItem, key) => (
-                <li key={key} className={menuItem.submenu && "group relative"}>
+                <li key={key} className={menuItem.submenu ? "group relative" : ""}>
                   {menuItem.submenu ? (
                     <>
                       <button
-                        onClick={() => setDropdownToggler(!dropdownToggler)}
-                        className={`flex cursor-pointer items-center justify-between gap-3 ${
+                        onClick={() => setActiveDropdown(activeDropdown === menuItem.id ? null : menuItem.id)}
+                        className={`font-montserrat text-xs font-medium uppercase tracking-widest flex cursor-pointer items-center justify-between gap-2 transition-colors ${
                           pathUrl === menuItem.path ||
                           menuItem.submenu.some((item) => pathUrl === item.path)
-                            ? "text-primary"
-                            : navigationOpen
-                            ? "text-black hover:text-primary"
-                            : stickyMenu
-                            ? "text-black hover:text-primary"
-                            : "text-white hover:text-primary"
-                        } dark:text-white dark:hover:text-primary`}
+                            ? "text-red-600"
+                            : navigationOpen || stickyMenu
+                            ? "text-gray-800 hover:text-red-600 dark:text-gray-200 dark:hover:text-red-600"
+                            : "text-white/90 hover:text-white"
+                        }`}
                       >
                         {menuItem.title}
-                        <span>
-                          <svg
-                            className={`h-3 w-3 cursor-pointer ${
-                              pathUrl === menuItem.path ||
-                              menuItem.submenu.some(
-                                (item) => pathUrl === item.path,
-                              )
-                                ? "fill-primary"
-                                : stickyMenu
-                                ? "fill-black"
-                                : "fill-white"
-                            } group-hover:fill-primary dark:fill-white`}
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 512 512"
-                          >
-                            <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-                          </svg>
-                        </span>
+                        <svg
+                          className={`h-3 w-3 ${
+                            pathUrl === menuItem.path ||
+                            menuItem.submenu.some((item) => pathUrl === item.path)
+                              ? "fill-red-600"
+                              : navigationOpen || stickyMenu
+                              ? "fill-gray-800 dark:fill-gray-200 group-hover:fill-red-600 dark:group-hover:fill-red-600"
+                              : "fill-white/90 group-hover:fill-white"
+                          }`}
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                        >
+                          <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+                        </svg>
                       </button>
 
                       <ul
-                        className={`dropdown ${dropdownToggler ? "flex" : ""} ${
-                          stickyMenu ? "text-black" : "text-white"
-                        } dark:text-white dark:hover:text-primary`}
+                        className={`dropdown ${activeDropdown === menuItem.id ? "flex" : ""} ${
+                          stickyMenu || pathUrl !== "/" ? "text-gray-800" : "text-white"
+                        } dark:text-white dark:hover:text-red-600`}
                       >
                         {menuItem.submenu.map((item, key) => (
                           <li
                             key={key}
-                            className={`${
+                            className={`font-montserrat text-xs font-medium uppercase tracking-widest transition-colors ${
                               pathUrl === item.path
-                                ? "text-primary"
-                                : "text-black hover:text-primary"
-                            } dark:text-white dark:hover:text-primary`}
+                                ? "text-red-600"
+                                : "text-gray-800 hover:text-red-600 dark:text-gray-200 dark:hover:text-red-600"
+                            }`}
                           >
                             <Link href={item.path || "#"}>{item.title}</Link>
                           </li>
@@ -186,15 +165,13 @@ const Header = () => {
                   ) : (
                     <Link
                       href={`${menuItem.path}`}
-                      className={`${
+                      className={`font-montserrat text-xs font-medium uppercase tracking-widest transition-colors ${
                         pathUrl === menuItem.path
-                          ? "text-primary"
-                          : navigationOpen
-                          ? "text-black hover:text-primary"
-                          : stickyMenu
-                          ? "text-black hover:text-primary"
-                          : "text-white hover:text-primary"
-                      } dark:text-white dark:hover:text-primary`}
+                          ? "text-red-600"
+                          : navigationOpen || stickyMenu
+                          ? "text-gray-800 hover:text-red-600 dark:text-gray-200 dark:hover:text-red-600"
+                          : "text-white/90 hover:text-white"
+                      }`}
                     >
                       {menuItem.title}
                     </Link>
@@ -203,11 +180,13 @@ const Header = () => {
               ))}
             </ul>
           </nav>
-
-          <div className="mt-7 flex items-center gap-6 xl:mt-0">
-            <ThemeToggler />
-          </div>
         </div>
+
+        {/* Right: Theme Toggler */}
+        <div className="hidden xl:flex w-1/4 items-center justify-end">
+          <ThemeToggler />
+        </div>
+
       </div>
     </header>
   );

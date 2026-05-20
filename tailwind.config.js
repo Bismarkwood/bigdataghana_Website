@@ -12,7 +12,8 @@ module.exports = {
   darkMode: "class",
   theme: {
     fontFamily: {
-      inter: ["Inter", "sans-serif"],
+      sans: ["var(--font-montserrat)", "sans-serif"],
+      montserrat: ["var(--font-montserrat)", "sans-serif"],
     },
     extend: {
       colors: {
@@ -136,11 +137,16 @@ module.exports = {
           "0%, 100%": { transform: "translateY(100%)" },
           "50%": { transform: "translateY(0)" },
         },
+        "fade-in": {
+          "0%": { opacity: "0", transform: "translate(-50%, 20px)" },
+          "100%": { opacity: "1", transform: "translate(-50%, 0)" },
+        },
       },
       animation: {
         line1: "line 3s linear infinite",
         line2: "line 6s linear infinite",
         line3: "line 9s linear infinite",
+        "fade-in": "fade-in 0.5s ease-out forwards",
       },
     },
   },
