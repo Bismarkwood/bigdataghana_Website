@@ -81,6 +81,34 @@ const team = [
       linkedin: "https://www.linkedin.com/in/nancy-wayua-317905261",
     },
   },
+  {
+    id: 12,
+    name: "Yaa Oparebea Acquah",
+    role: "Financial Assistant",
+    bio: "",
+    img: "/images/team/yaa-oparebea-acquah.png",
+    social: {
+      linkedin: "https://www.linkedin.com/in/yaa-oparebea-acquah-368170331/",
+    },
+  },
+  {
+    id: 13,
+    name: "Akwasi Darkwa Anto",
+    role: "Data & AI Engineer",
+    bio: "",
+    img: "/images/team/akwasi-darkwa-anto.png",
+    social: {
+      linkedin: "https://www.linkedin.com/in/akwasi-anto",
+    },
+  },
+  {
+    id: 14,
+    name: "Getrude ChiChi",
+    role: "Cloud Support Engineer",
+    bio: "",
+    img: "/images/team/getrude-chichi.png",
+    social: {},
+  },
 ];
 
 const TeamCard = ({ member }: { member: any }) => (

@@ -43,7 +43,6 @@ const Footer = () => {
                 <p className="mb-10 mt-5 text-justify text-gray-400">
                   Inspired Innovation for development
                 </p>
-                <LanguageSwitcher />
 
                 <motion.div
                   variants={{
@@ -352,7 +351,7 @@ const Footer = () => {
           {/* <!-- Footer Top --> */}
 
           {/* <!-- Footer Bottom --> */}
-          <div className=" items-center justify-center gap-5 border-t border-stroke py-7 dark:border-strokedark lg:flex-row lg:justify-between lg:gap-0">
+          <div className="flex flex-col items-center justify-between gap-5 border-t border-stroke py-7 dark:border-strokedark lg:flex-row lg:gap-0">
             <motion.div
               variants={{
                 hidden: {
@@ -372,6 +371,25 @@ const Footer = () => {
               className="animate_top px-4 text-center text-gray-400" // Added text-center and padding for mobile
             >
               <p>&copy; Copyright by bigdataghana.com </p>
+            </motion.div>
+            <motion.div
+              variants={{
+                hidden: {
+                  opacity: 0,
+                  y: -20,
+                },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                },
+              }}
+              initial="hidden"
+              whileInView="visible"
+              transition={{ duration: 1, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="animate_top px-4"
+            >
+              <LanguageSwitcher />
             </motion.div>
           </div>
           {/* <!-- Footer Bottom --> */}

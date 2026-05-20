@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 declare global {
   interface Window {
@@ -30,6 +30,16 @@ function setTranslationCookie(targetLanguage: "en" | "fr") {
 }
 
 export default function LanguageSwitcher() {
+  const [activeLanguage, setActiveLanguage] = useState<"en" | "fr">("en");
+
+  const languageOptions = useMemo(
+    () => [
+      { code: "en" as const, label: "English", short: "EN", flag: "🇬🇧" },
+      { code: "fr" as const, label: "Francais", short: "FR", flag: "🇫🇷" },
+    ],
+    [],
+  );
+
   useEffect(() => {
     window.googleTranslateElementInit = () => {
       if (window.google?.translate?.TranslateElement) {
@@ -53,34 +63,44 @@ export default function LanguageSwitcher() {
       script.async = true;
       document.body.appendChild(script);
     }
+
+    const match = document.cookie.match(/(?:^|;\s*)googtrans=([^;]+)/);
+    const cookieValue = match?.[1];
+    if (cookieValue?.endsWith("/fr")) {
+      setActiveLanguage("fr");
+    } else {
+      setActiveLanguage("en");
+    }
   }, []);
 
   const switchLanguage = (target: "en" | "fr") => {
+    setActiveLanguage(target);
     setTranslationCookie(target);
     window.location.reload();
   };
 
   return (
-    <div className="mt-6">
-      <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-gray-400">
-        Language
-      </p>
-      <div className="flex items-center gap-2">
-        <button
-          type="button"
-          onClick={() => switchLanguage("en")}
-          className="rounded border border-gray-600 px-3 py-1 text-xs font-semibold text-gray-300 transition-colors hover:border-red-600 hover:text-red-600"
-        >
-          English
-        </button>
-        <button
-          type="button"
-          onClick={() => switchLanguage("fr")}
-          className="rounded border border-gray-600 px-3 py-1 text-xs font-semibold text-gray-300 transition-colors hover:border-red-600 hover:text-red-600"
-        >
-          Francais
-        </button>
-      </div>
+    <div className="inline-flex items-center gap-2 rounded-full border border-gray-700/80 bg-black/40 p-1 backdrop-blur-sm">
+      {languageOptions.map((option) => {
+        const isActive = activeLanguage === option.code;
+        return (
+          <button
+            key={option.code}
+            type="button"
+            onClick={() => switchLanguage(option.code)}
+            aria-label={`Switch language to ${option.label}`}
+            className={`inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-semibold transition-all ${
+              isActive
+                ? "bg-red-600 text-white shadow-lg shadow-red-600/30"
+                : "text-gray-300 hover:bg-white/10 hover:text-white"
+            }`}
+          >
+            <span className="text-sm leading-none">{option.flag}</span>
+            <span className="hidden sm:inline">{option.label}</span>
+            <span className="sm:hidden">{option.short}</span>
+          </button>
+        );
+      })}
       <div id="google_translate_element" className="hidden" />
     </div>
   );
